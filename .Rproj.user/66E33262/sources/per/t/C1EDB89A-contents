@@ -1,0 +1,18 @@
+\renewcommand\familydefault{\sfdefault}
+\usepackage{biblatex}
+
+%
+%	B I B L I O G R A P H Y 
+%
+% Biblatex
+%
+%	This document class apparently loads natbib by default. 
+%	To use biblatex, empty out some natbib commands
+%
+% Start of 'ignore natbib' hack
+	\let\bibhang\relax
+	\let\citename\relax
+	\let\bibfont\relax
+	\let\Citeauthor\relax
+	\expandafter\let\csname ver@natbib.sty\endcsname\relax
+% End of 'ignore natbib' hack

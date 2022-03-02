@@ -1,0 +1,194 @@
+%
+%	B I B L I O G R A P H Y 
+%
+% Biblatex
+%
+%	This document class apparently loads natbib by default. 
+%	To use biblatex, empty out some natbib commands
+%
+% Start of 'ignore natbib' hack
+	\let\bibhang\relax
+	\let\citename\relax
+	\let\bibfont\relax
+	\let\Citeauthor\relax
+	\expandafter\let\csname ver@natbib.sty\endcsname\relax
+% End of 'ignore natbib' hack
+
+% Customize biblatex specifically
+
+\usepackage[citestyle=authoryear-comp,
+		sortcites=false,
+		sorting=nyt, 
+		bibstyle=authoryear,
+		giveninits=true,
+		mincitenames=1,
+		maxcitenames=2,
+		minbibnames=1,
+		maxbibnames=2,
+		hyperref=true,
+		backref=true, 
+		uniquename=false,
+		uniquelist=false,
+		natbib=true, 
+		backend=biber]
+	{biblatex}
+% Customize bibliograhpy when bibstyle = authoryear: 
+	\DeclareFieldFormat[article]{title}{#1}  % remove quotes from title
+	\DeclareFieldFormat[article]{pages}{#1}  % remove Pp. from pages
+	
+	
+	\renewcommand*{\nameyeardelim}{\addspace} % remove comma after in-text citations
+		\DeclareFieldFormat[inproceedings]{title}{#1\adddot}
+	\DeclareFieldFormat[inbook]{title}{#1\adddot}
+		% Format conference papers
+	\renewbibmacro{in:}{%
+		\ifboolexpr{%
+			test {\ifentrytype{inbook}}%
+			or
+			test {\ifentrytype{inproceedings}}%
+		}
+		{}{{ }In\nopunct}{}}
+	
+	% Remove "In:" from article citations
+	\renewbibmacro{in:}{%
+		\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+	
+	% Use ampersand & in refs and citations
+\renewcommand*{\finalnamedelim}{%
+	\ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
+	\addspace\&\space}
+
+\usepackage{xpatch}
+\xpatchbibmacro{date+extradate}{%
+	  \printtext[parens]%
+}{%
+	\setunit*{\addperiod\space}%
+	\printtext%
+}{}{}
+
+% Editing editors
+
+\xpatchbibdriver{inbook}
+{\usebibmacro{in:}%
+	\usebibmacro{bybookauthor}%
+	\newunit\newblock
+	\usebibmacro{maintitle+booktitle}%
+	\newunit\newblock
+	\usebibmacro{byeditor+others}}
+{\usebibmacro{in:}%
+	\usebibmacro{bybookauthor}%
+	\newunit\newblock
+	\usebibmacro{byeditor:in}%
+	\newunit\newblock
+	\usebibmacro{maintitle+booktitle}%
+	\newunit\newblock
+	\usebibmacro{byeditor+others}}
+{}{}
+
+\xpatchbibdriver{incollection}
+{\usebibmacro{in:}%
+	\usebibmacro{maintitle+booktitle}%
+	\newunit\newblock
+	\usebibmacro{byeditor+others}}
+{\usebibmacro{in:}%
+	\usebibmacro{byeditor:in}%
+	\setunit{\labelnamepunct}\newblock
+	\usebibmacro{maintitle+booktitle}%
+	\newunit\newblock
+	\usebibmacro{byeditor}}
+{}{}
+
+\xpatchbibdriver{inproceedings}
+{\usebibmacro{in:}%
+	\usebibmacro{maintitle+booktitle}%
+	\newunit\newblock
+	\usebibmacro{event+venue+date}%
+	\newunit\newblock
+	\usebibmacro{byeditor+others}}
+{\usebibmacro{in:}%
+	\usebibmacro{byeditor:in}%
+	\setunit{\labelnamepunct}\newblock
+	\usebibmacro{maintitle+booktitle}%
+	\newunit\newblock
+	\usebibmacro{event+venue+date}%
+	\newunit\newblock
+	\usebibmacro{byeditor+others}}
+{}{}
+
+\newbibmacro*{byeditor:in}{%
+	\ifnameundef{editor}
+	{}
+	{\printnames[editorin]{editor}%
+		\addspace\bibsentence%
+		\mkbibparens{\usebibmacro{editorstrg}}%
+		\clearname{editor}%
+		\printunit{\addcomma\space}}}
+	
+% End editor editing
+
+% No "pp." from before page ranges in edited vols, etc
+	\DeclareFieldFormat{pages}{#1}
+
+
+	\DefineBibliographyStrings{english}{%
+		backrefpage = {p.},% originally "cited on page"
+		backrefpages = {pp.},% originally "cited on pages"
+	}
+
+% Remove character separating in-text citation and following comment 
+	\renewcommand*{\postnotedelim}
+	{}
+	
+	\renewcommand*{\multicitedelim}
+	{\addcomma\space}
+	
+	\DeclareSourcemap{
+		\maps{
+			\map{
+				\step[fieldset=doi, null]
+				\step[fieldset=url, null]
+				\step[fieldset=urldate, null]
+				\step[fieldset=eprint, null]
+				\step[fieldset=eprinttype, null]
+				\step[fieldset=arxivId, null]
+				\step[fieldset=archivePrefix, null]
+				\step[fieldset=issn, null]
+				\step[fieldset=isbn, null]
+			}
+		}
+	}
+	
+	% Hide certain fields from biber
+	% ISSN
+	\AtEveryBibitem{\clearfield{number}}
+	\AtEveryCitekey{\clearfield{number}}
+	% ISSN
+	\AtEveryBibitem{\clearfield{issn}}
+	\AtEveryCitekey{\clearfield{issn}}
+	% ISBN
+	\AtEveryBibitem{\clearfield{isbn}}
+	\AtEveryCitekey{\clearfield{isbn}}
+	% URL
+	\AtEveryBibitem{\clearfield{url}}
+	\AtEveryCitekey{\clearfield{url}}
+	% PMID
+	\AtEveryBibitem{\clearfield{pmid}}
+	\AtEveryCitekey{\clearfield{pmid}}
+	% DOI
+	\AtEveryBibitem{\clearfield{doi}}
+	\AtEveryCitekey{\clearfield{doi}}
+	% Month
+	\AtEveryBibitem{\clearfield{month}}
+	\AtEveryCitekey{\clearfield{month}}
+	% Day
+	\AtEveryBibitem{\clearfield{day}}
+	\AtEveryCitekey{\clearfield{day}}
+	% language
+	\AtEveryBibitem{\clearlist{language}}
+	\AtEveryCitekey{\clearlist{language}}
+	\AtEveryBibitem{\clearlist{langid}}
+	\AtEveryCitekey{\clearlist{langid}}
+	
+% Call bib file
+% 
+\addbibresource{FireScienceWorkshop.bib}

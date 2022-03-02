@@ -1,0 +1,6 @@
+\begin{adjustwidth}{}{}
+\textwidth 43pc
+\twocolumn  
+\renewcommand*{\bibfont}{\small}
+\printbibliography[title={References cited}]
+\end{adjustwidth}

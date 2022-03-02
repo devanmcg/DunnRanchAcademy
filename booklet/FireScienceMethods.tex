@@ -1,0 +1,61 @@
+\documentclass[twoside, 12pt]{tufte-book}
+\include{TeXstras2} % Call customisations
+%
+\begin{document} 
+%
+%	Title page 
+%
+\begin{titlepage} 
+	\newgeometry{textwidth=18cm}
+		\include{TitlePage}
+	\restoregeometry
+\end{titlepage}
+%
+% 	Summary
+%
+\addcontentsline{toc}{chapter}{Summary}
+\newgeometry{textwidth=15cm}
+\thispagestyle{empty}
+	\begin{mybox}{\section{Summary} \vspace{0.5cm}}
+		{\parbox{\textwidth}{ 
+			\input{sections/Summary} 
+		}}
+	\end{mybox}
+\restoregeometry
+%
+% 	Introduction
+%
+%\newgeometry{textwidth=15cm}
+\include{sections/intro}
+%
+%	TOC
+%
+\newgeometry{textwidth=15cm}
+	\tableofcontents
+\restoregeometry
+%
+%	Call the sections
+%
+\part{Prescribed fire science}
+	\include{sections/science_basics.tex}
+	\include{sections/fuels.tex}
+
+\part{Prescribed fire operations}
+	\include{sections/ops_basics.tex}
+
+
+\chapter{Ignitions} 
+\chapter{Holding} 
+\chapter{Pumps and engines} 
+
+%\addcontentsline{toc}{chapter}{Bibliography}
+%
+%	Call the bibliography
+%
+\clearpage
+\begin{fullwidth} % Makes the refs go all the way across page
+\bibliographystyle{elsarticle-harv} 
+\bibliography{FireScienceWorkshop.bib}
+\end{fullwidth}
+%
+\end{document}

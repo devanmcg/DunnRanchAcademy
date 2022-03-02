@@ -1,0 +1,141 @@
+\usepackage[svgnames]{xcolor} % Required for colour specification
+\definecolor{BisonGreen}{RGB}{0,102,51}
+\definecolor{BisonYellow}{RGB}{255,204,0}
+
+\usepackage{transparent}
+
+\usepackage{lscape}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\usepackage{soul} % accommodates underlined text
+\usepackage[toc,page]{appendix}
+\setcounter{secnumdepth}{-1} % Remove heading numerals
+\hypersetup{urlcolor = {BisonGreen} }
+
+\renewcommand{\familydefault}{\sfdefault}
+
+
+% 
+% Tufte-related formatting
+%
+\usepackage{sectsty}
+\allsectionsfont{\normalfont\sffamily\bfseries}
+
+\sectionfont{\color{BisonGreen}}
+\subsectionfont{\color{BisonGreen!75}}
+
+\partfont{\raggedright}
+
+\usepackage{titlesec}
+%\titleformat{\chapter}
+%\setcounter{secnumdepth}{0} 
+
+\usepackage{tocloft}
+\renewcommand{\cftsecfont}{\normalfont\sffamily}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+% Fonts, language, symbols
+\usepackage{fixltx2e,fix-cm}
+\usepackage[english]{babel}
+\usepackage{epigrafica}
+\usepackage[LGR, T1, OT1]{fontenc}
+\usepackage{textcomp}
+%\usepackage{mathptmx,txfonts}
+\usepackage{lmodern}
+
+
+\newcommand{\degC}{{$^{\circ}$C}}
+
+%
+% Bulleted list formatting
+%
+	\usepackage{pifont}
+	\renewcommand{\labelitemi}{\color{BisonGreen!90}\ding{229}}
+	\renewcommand{\labelitemii}{\color{BisonGreen!70}\ding{229}}
+\usepackage{enumitem} % reduce space between items
+
+
+\renewcommand{\sfdefault}{txss}
+
+
+\usepackage{xspace}
+
+\usepackage{graphicx} 
+\graphicspath{{figures/}}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+
+\newcommand*{\plogo}{\includegraphics[width=1\textwidth]{SponsorBanner.png}} 
+%
+% Boxes
+%
+
+\usepackage[framemethod=tikz]{mdframed}
+
+\mdfdefinestyle{boxstyle}{%
+	linecolor=BisonGreen,
+	outerlinewidth=2pt,%
+	frametitlerule=true,
+	frametitlefont=\centering\sffamily\bfseries\color{BisonGreen},%
+	frametitlerulewidth=1pt,
+	frametitlerulecolor=BisonGreen,%
+	frametitlebackgroundcolor=BisonYellow!40,
+	backgroundcolor=BisonGreen!10,
+	fontcolor=black,
+	innertopmargin=\topskip,
+	roundcorner=10pt
+}
+\newmdenv[style=boxstyle]{exa}
+\newenvironment{mybox}[1]
+{\begin{exa}[frametitle=#1]}
+	{\end{exa}}
+
+
+      				      			  
+% Introduce \centerfloat command to get figure wider than \textwidth
+  \makeatletter
+\newcommand*{\centerfloat}{%
+  \parindent \z@
+  \leftskip \z@ \@plus 1fil \@minus \textwidth
+  \rightskip\leftskip
+  \parfillskip \z@skip}
+\makeatother
+
+\usepackage{natbib}
+
+%
+% Index
+%
+
+\usepackage{imakeidx}
+\makeindex[	title=Index,
+			intoc,
+		   	columns = 2]
+\makeindex[	name=credits,
+			title=Image attributions, 
+			intoc,
+		  	columns = 1]
+
+\indexsetup{toclevel = chapter}
+
+%
+% Add photo credit under lower right corner 
+%
+
+\newcommand\PhotoCredit[1]{
+\begin{flushright}
+	{\raggedleft{\vspace{-0.5em} \scalebox{0.5}{\emph{#1}}\vspace{-0.5em} } }
+\end{flushright}}
+
+\newcommand\DataCredit[1]{
+	\begin{flushright}
+		{\raggedleft{\vspace{-0.5em} \scalebox{0.5}{\emph{Data: #1}}\vspace{-0.5em} } }
+\end{flushright}}
+
+\usepackage{seqsplit}
+
+\newcommand\PhotoIndex[4]{
+\index[credits]{\ref{#2}: #1, #3, #4}
+	
+}

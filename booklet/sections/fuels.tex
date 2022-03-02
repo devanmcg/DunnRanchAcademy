@@ -1,0 +1,159 @@
+\chapter{Fuels} 
+
+Fuel for wildland fire consists of vegetation. 
+Recall from Eq.~\ref{eq:combustion} that combustion is essentially the decomposition of plant matter\textemdash originally produced by photosynthesis\textemdash in the presence of oxygen and sufficient heat. 
+Because a high degree of variability in fire behavior can be attributed to variability in fuels, making good fuel measurements is essential to predicting how a prescribed fire will burn and explaining variability in the effects that fire produces. 
+
+\section{Broad considerations}
+
+\subsection{Fuels and the fire regime}
+
+The primary consideration of fire regime in planning fuels measurement is identifying the \emph{fire type} by determining which vegetation layer(s) carries the fire (Fig.~\ref{fig:ParametersFactors}). 
+Under all but the most extreme conditions in densely-wooded vegetation, prescribed fire management is typically focused on surface fires that consume herbaceous vegetation rooted in\textemdash or laying on\textemdash the soil surface. 
+\footnote{Note that in woodlands and savannas, the fuelbed often contains leaf litter that fell from tree canopies, which are considered surface fuels once they have fallen.}
+
+Next, one must determine if live fuel is a consideration (we assume here that it is). 
+How to determine if live fuels are relevant? 
+Consider the conditions below. 
+If any apply to a burn or study, one should likely be measuring live and dead fuels separately: 
+
+\paragraph{Checklist for live fuel relevance} 
+\begin{itemize}
+	\item[{\color{BisonGreen!80}\ding{51}}] Prescription for growing season burn
+	\item[{\color{BisonGreen!80}\ding{51}}] Vegetation dominated by exotic cool-season (C\textsubscript{3}) grasses
+	\item[{\color{BisonGreen!80}\ding{51}}] Management and/or research objectives focus on any C\textsubscript{3} grass
+	\item[{\color{BisonGreen!80}\ding{51}}] Research objectives include parameterizing custom fuel models and/or modeling fire behavior  
+\end{itemize}
+
+However, if none of the above conditions apply, one is probably not missing out on much information by not dividing the fuelbed up into live and dead components.
+
+There are two basic types of information on fuels the fire scientist ought to obtain \emph{by fuel class}\footnote{While these would typically also be described by size class, in the workshop we are considering only 1 hr fuels, so we will consider each in terms of live and dead components.}: 
+
+\begin{itemize}
+	\item Fuel load 
+	\item Fuel moisture
+\end{itemize}
+
+\subsection{Sampling approaches}
+
+There are two broad categories of sampling methodologies, each with pros and cons specific to wildland fuel sampling, although the pros and cons likely apply to other sampling contexts, as well: 
+\begin{itemize}
+	\item \textbf{Destructive\textemdash}Samples are collected by physically removing material from the environment. 
+	\begin{itemize}
+		\item[\textit{Pros:}]Most accurate; probably needs fewest observations. Raw data in desired units (mass/area for fuel load, \% $H_{2}O$ for fuel moisture).
+		\item[\textit{Cons:}]Removes from the fire environment the very thing one seeks to describe within the fire environment. 
+		Time consuming. 
+		Requires weighing and drying equipment.
+		Data not instantaneously available. 
+	\end{itemize}
+	\item \textbf{Non-destructive\textemdash}Sampling consists of observations that do not require the material to be disturbed. 
+		\begin{itemize}
+		\item[\textit{Pros:}]Doesn't remove any fuel from the fire environment. Most often requires less sample processing time \& effort, and data can be instantaneously available. 
+		\item[\textit{Cons:}]Likely requires more observations to minimize variability. Raw data rarely on a meaningful scale; often needs a conversion factor that in turn must often be derived from separate calibration efforts.
+	\end{itemize}
+\end{itemize}
+
+Whether one implements destructive or non-destructive sampling has profound implications on the nature of the sampling protocol and the data it produces, including the transferability of data to other events and locations and even whether the data are useful for the stated purposes. 
+Consider just a few examples of how different wildland fire professionals might need different types of data on different time scales: 
+\begin{itemize}
+	\item \emph{The burn boss wants to make tactical decisions on fuel conditions such as a minimum or maximum fuel load, or minimum dead fuel moisture.} 
+	They will need this information the day of the burn\textemdash they cannot wait for samples to be clipped, dried for 48 h, and weighed. 
+	On the other hand, an estimation based on a representative but limited sample is probably sufficient. 
+	The values likely do not need to be applied to other locations. 
+	\item \emph{The biologist has designed a monitoring program to assess shrub mortality across several sites with different amounts of smooth brome.} 
+	Whether that smooth brome was green or not at the time of the fire\textemdash and how much of it there was\textemdash is likely important information. 
+	On the other hand, categorical assessments of live:dead biomass based on non-destructive observations is probably sufficient.
+	An estimation of live fuel moisture based on a representative but limited sample would probably be icing on the cake. 
+	\item \emph{A graduate student has a hypothesis that connects fire behavior to fuel parameters.} 
+	It is important that multiple pre-fire measurements be taken around each fire behavior observation point, and continuous variables are best. 
+	On one hand, statistical analysis can take fuel load on any scale, so a rapid, non-destructive quantification method will be fine.
+	On the other hand, reviewers are likely going to want to be able to connect these data to actual values, and managers will need those values to apply the findings well, so it is best to have a plan for calibration. 
+	An accurate measure of fuel moisture is important, but the data aren't needed until well after the fire, so there is plenty of time to dry and weigh clipped samples. 
+\end{itemize}  
+
+These questions help guide a responsive and informative sampling plan: 
+
+\begin{itemize}[noitemsep]
+	\item[] \hspace{-1.9em}\emph{Ask first:}
+	\item[{\color{BisonGreen!80}\ding{51}}]\emph{Who} is expecting the data and \emph{what} are they going to use it for?
+	\item[{\color{BisonGreen!80}\ding{51}}]\emph{When} are they expecting it?
+	\item[] \hspace{-1.9em} \emph{Then determine:}
+	\item[{\color{BisonGreen!80}\ding{51}}]\emph{What} will be reported
+	\item[{\color{BisonGreen!80}\ding{51}}]\emph{How and when} data will be collected 
+\end{itemize}
+
+\section{Measuring fuel load} 
+
+\subsection{Destructive sampling}
+
+Clipping is the most straightforward form of measuring fuel load in grasslands. 
+A representative sample point is identified, a known area determined, and all vegetation\textemdash representing combustible fuel\textemdash is removed by hand and stuffed into a paper bag (Fig.~\ref{fig:clipping}). 
+Once dried and weighed, the mass of the material in the bag is easily expressed as the fuel load for the known area from which the sample was collected.
+
+\begin{figure*} 
+		\begin{center}
+	\includegraphics[width=0.57\textwidth]
+		{science/Fuels/ClippingQuadratShears}~
+	\includegraphics[width=0.43\textwidth]
+		{science/Fuels/DryGrassBag}
+			\end{center}
+	\caption{On the left, a 0.25 mm\textsuperscript{-2} quadrat is about to be clipped with sheep shears (this might sound silly, but they are the secret weapon for efficient grass clipping). 
+		Once bagged, the samples are dried in a forced air drying oven at at least 60$\deg$C for at least 48 h. 
+		After drying, samples are weighed and their mass expressed on a per-area basis.
+		 } \label{fig:clipping}
+	%(Fig.~\ref{fig:clipping})
+\end{figure*}
+
+\paragraph{Clipping} 
+
+Clip all material to within about 2 cm or 1 inch of the soil surface. 
+The main idea is to gather as much combustible material as possible while being as consistent from sample to sample. 
+Clipping and scraping right down to bare mineral soil when one can will produce a different picture of the available fuel load than a quadrat with a thicker mat of wet litter that is unlikely to burn anyway (Fig.~\ref{fig:residue}). 
+Better to be consistent from quadrat to quadrat. 
+Deposit clipped material in a paper bag clearly labeled with a marker. 
+
+\begin{marginfigure}
+	\begin{center}
+		\includegraphics[width=2.2in]
+		{science/fuels/residue}
+		\caption{Even a hot fire can't burn it all off. 
+			\label{fig:residue} } 
+		% (Fig.~\ref{fig:residue})
+	\end{center}
+\end{marginfigure}
+
+\paragraph{Drying}
+
+Clipped biomass samples are typically dried in forced-air ovens at at least 60$\deg$C.\footnote{There is debate around the minimum temperature required to adequately dehydrate samples, although differences have the most effect on determining moisture content, not dry mass. 
+	Thus this debate is discussed in the fuel moisture section below.}
+The aim is to dehydrate clipped biomass to the point that the samples reach an equilibrium moisture content with the air in the oven\textemdash as the weight of samples at such a state would no longer loose mass, complete drying of samples is often referred to as ``constant mass.``
+With herbaceous samples, this often occurs within 48 hours. 
+ 
+\paragraph{Weighing}
+
+Weigh dried biomass samples on a digital balance shortly after removal from the oven, before they absorb moisture from the cooler ambient air. 
+The primary concern with weighing is accounting for the mass of the paper bag. 
+One can either dump the bag contents into a tared container on the balance, or weigh the sample in the bag and subtract the mass of the bag. 
+There are many arguments for the latter\textemdash it is often faster and less messy\textemdash but it is prone to error if different types of bags are used. 
+A best practice for data management is to enter a code for the bag type when entering mass data for each sample, or group of samples with a common bag type, and assign the mean mass of several empty bags to each code when subtracting bag weights prior to analysis. 
+	
+
+
+\subsection{History of fire in grasslands}
+
+Fire has been an intrinsic component of grasslands and other rangeland ecosystems since these biomes developed and spread around the world. 
+Grasslands as we know them today\textemdash including both the vegetation and characteristic animal communities\textemdash emerged after the last Ice Age, and have burned regularly and naturally since. 
+Many grass-dominated landscapes owe their existence to fire, especially in the US Great Plains \citep{mcgranahan2021}, where precipitation is substantial enough to support woody plant species capable of converting these landscapes to shrublands, woodlands, or even forests without regular burning. 
+
+
+
+\begin{marginfigure}
+	\begin{center}
+		\includegraphics[width=2.2in, 
+				trim={1.5cm 0cm 1cm 0.5cm}, clip=true]
+			{groundhogday}
+		\caption{Topography, weather, and the fuelbed are the three major drivers of wildland fire behaviour.
+			\index{Fire triangles!Fire behaviour|textit} \label{fig:FireBehaviourTriangle} } 
+		% (Fig.~\ref{fig:FireBehaviourTriangle})
+	\end{center}
+\end{marginfigure}

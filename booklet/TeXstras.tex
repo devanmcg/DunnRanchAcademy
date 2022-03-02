@@ -1,0 +1,220 @@
+% 
+% Report formatting
+%
+\usepackage{kantlipsum}
+
+\usepackage[svgnames]{xcolor} % Required for colour specification
+\definecolor{BisonGreen}{RGB}{0,102,51}
+\definecolor{BisonYellow}{RGB}{255,204,0}
+
+\usepackage{transparent}
+
+\usepackage{lscape}
+\usepackage{setspace}
+%\doublespacing
+%\usepackage[
+%colorlinks=true, 
+%allcolors = {BisonGreen}]{hyperref}
+\usepackage{indentfirst}
+\usepackage[toc,page]{appendix}
+\setcounter{secnumdepth}{-2} % Remove heading numerals
+\hypersetup{urlcolor = {BisonGreen} }
+
+\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{helvet}
+%\usepackage{avant}
+\usepackage{epigrafica}
+
+
+% 
+% Tufte-related formatting
+%
+\usepackage{sectsty}
+\allsectionsfont{\normalfont\sffamily\bfseries}
+
+\sectionfont{\color{BisonGreen}}
+\subsectionfont{\color{BisonGreen!75}}
+
+\partfont{\raggedright}
+
+\usepackage{titlesec}
+%\titleformat{\chapter}
+\setcounter{secnumdepth}{0} 
+
+\usepackage{tocloft}
+\renewcommand{\cftsecfont}{\normalfont\sffamily}
+
+%\sectionfont{\Large\sffamily}
+
+%
+%	Signature line 
+%
+\newcommand{\signaturedate}[2][Devan Allen  McGranahan, PhD]{%
+	\parbox{0.5\textwidth}{\raggedleft}{
+		
+		\parbox{8cm}{
+			\centering 
+			\rule{8cm}{0.75pt}\\
+			#1 
+		}
+		\hfill
+		\parbox{5cm}{
+			\centering
+		\rule{4cm}{0.75pt}\\	 \today \\
+
+		
+		}
+	}\vspace*{1cm}
+}
+
+%
+% General formatting
+%
+\usepackage[T1]{fontenc}
+%\usepackage[latin9]{inputenc}
+
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+
+
+
+\usepackage{amssymb}
+%\usepackage{amsmath}
+
+
+\usepackage{xspace}
+
+\usepackage{graphicx} 
+\graphicspath{{figures/}}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+
+\newcommand*{\plogo}{\includegraphics[width=0.5\textwidth]{NDSURangeScience.pdf}} 
+%
+% Boxes
+%
+
+\usepackage[framemethod=tikz]{mdframed}
+
+\mdfdefinestyle{boxstyle}{%
+	linecolor=BisonGreen,
+	outerlinewidth=2pt,%
+	frametitlerule=true,
+	frametitlefont=\centering\sffamily\bfseries\color{BisonGreen},%
+	frametitlerulewidth=1pt,
+	frametitlerulecolor=BisonGreen,%
+	frametitlebackgroundcolor=BisonYellow!40,
+	backgroundcolor=BisonGreen!10,
+	fontcolor=black,
+	innertopmargin=\topskip,
+	roundcorner=10pt
+}
+\newmdenv[style=boxstyle]{exa}
+\newenvironment{mybox}[1]
+{\begin{exa}[frametitle=#1]}
+	{\end{exa}}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+%
+% %  B I B L I O G R A P H Y 
+%
+
+% Biblatex
+%
+%	This document class apparently loads natbib by default. 
+%	To use biblatex, empty out some natbib commands
+%
+% Start of 'ignore natbib' hack
+	\let\bibhang\relax
+	\let\citename\relax
+	\let\bibfont\relax
+	\let\Citeauthor\relax
+	\expandafter\let\csname ver@natbib.sty\endcsname\relax
+% End of 'ignore natbib' hack
+
+\usepackage[citestyle=authoryear-comp,
+		sortcites=false,
+		sorting=nyt, 
+		bibstyle=authoryear,
+		giveninits=true,
+		mincitenames=1,
+		maxcitenames=2,
+		minbibnames=1,
+		maxbibnames=2,
+		hyperref=true,
+		backref=true, 
+		uniquename=false,
+		uniquelist=false,
+		natbib=false, 
+		backend=biber]
+	{biblatex}
+% Customize bibliograhpy when bibstyle = authoryear: 
+	\DeclareFieldFormat[article]{title}{#1}  % remove quotes from title
+	\DeclareFieldFormat[article]{pages}{#1}  % remove Pp. from pages
+
+\renewcommand*{\nameyeardelim}{\addspace} % remove comma after in-text citations
+\renewbibmacro{in:}{%
+	\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+
+% Hide certain fields from biber
+% ISSN
+\AtEveryBibitem{\clearfield{issn}}
+\AtEveryCitekey{\clearfield{issn}}
+% ISBN
+\AtEveryBibitem{\clearfield{isbn}}
+\AtEveryCitekey{\clearfield{isbn}}
+% URL
+\AtEveryBibitem{\clearfield{url}}
+\AtEveryCitekey{\clearfield{url}}
+% DOI
+\AtEveryBibitem{\clearfield{doi}}
+\AtEveryCitekey{\clearfield{doi}}
+% Month
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryCitekey{\clearfield{month}}
+% Day
+\AtEveryBibitem{\clearfield{day}}
+\AtEveryCitekey{\clearfield{day}}
+% language
+\AtEveryBibitem{\clearlist{language}}
+\AtEveryCitekey{\clearlist{language}}
+\AtEveryBibitem{\clearlist{langid}}
+\AtEveryCitekey{\clearlist{langid}}
+
+% Call bib file
+\addbibresource{FireScienceWorkshop.bib}
+% Hide certain fields from biber	
+\DeclareSourcemap{
+	\maps[datatype=biblatex]{
+		\map{
+			\step[fieldset=number, null]
+			\step[fieldset=issue, null]
+			\step[fieldset=note, null]
+			\step[fieldset=urldate, null]
+			\step[fieldset=url, null]
+			\step[fieldset=langid, null]
+			\step[fieldset=issn, null]
+			\step[fieldset=isbn, null]
+			\step[fieldset=doi, null]
+			\step[fieldset=month, null]
+			\step[fieldset=eprint, null]
+			\pertype{article}
+			\step[fieldset=month, null]
+			\step[fieldset=eprinttype, null]
+			\step[fieldset=issn, null]
+			%\step[fieldset=editor, null]
+}   }  }
+
+%\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+      				      			  
+% Introduce \centerfloat command to get figure wider than \textwidth
+  \makeatletter
+\newcommand*{\centerfloat}{%
+  \parindent \z@
+  \leftskip \z@ \@plus 1fil \@minus \textwidth
+  \rightskip\leftskip
+  \parfillskip \z@skip}
+\makeatother

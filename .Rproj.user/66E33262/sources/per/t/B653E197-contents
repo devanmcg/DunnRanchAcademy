@@ -1,0 +1,45 @@
+---
+title: Local perceptions of hydraulic fracturing ahead of exploratory drilling in eastern South Africa 
+author: |
+  | Devan Allen McGranahan $*$  
+  |
+  | $*$ USDA-ARS
+  |
+date: |
+  | Version date: `r format(Sys.time(), '%d %B %Y')`
+output:
+  tufte::tufte_book:
+    keep_tex: true
+header-includes:
+  - \renewcommand\familydefault{\sfdefault}
+bibliography: FireScienceWorkshop.bib
+link-citations: yes
+csl: ijwf.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.show='hold', warning = FALSE, message = FALSE, echo=FALSE)
+pacman::p_load(knitr, maps, dplyr, ggplot2, ggmap, grid, gridExtra)
+.simpleCap <- function(x) {
+    s <- strsplit(x, " ")[[1]]
+    paste(toupper(substring(s, 1, 1)), substring(s, 2),
+          sep = "", collapse = " ")
+}
+```
+
+# Summary 
+
+## Background
+
+* Fracking would bring new technologies--and impacts--to South Africa
+* Several applications for shale gas exploration have been made in South Africa over the last 10 years
+* Environmental Assessments and most public interest have focused on the Karoo, but recent exploration applications were filed for eastern SA 
+
+## Objectives
+
+Here's a citation [@mcgranahan2021]. 
+
+## Findings
+
+# References
+
