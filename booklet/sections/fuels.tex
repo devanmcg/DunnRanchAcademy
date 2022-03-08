@@ -1,4 +1,5 @@
 \chapter{Fuels} 
+\label{ch:fuels}
 
 Fuel for wildland fire consists of vegetation. 
 Recall from Eq.~\ref{eq:combustion} that combustion is essentially the decomposition of plant matter\textemdash originally produced by photosynthesis\textemdash in the presence of oxygen and sufficient heat. 
@@ -18,7 +19,7 @@ Consider the conditions below.
 If any apply to a burn or study, one should likely be measuring live and dead fuels separately: 
 
 \paragraph{Checklist for live fuel relevance} 
-\begin{itemize}
+\begin{itemize}[noitemsep]
 	\item[{\color{BisonGreen!80}\ding{51}}] Prescription for growing season burn
 	\item[{\color{BisonGreen!80}\ding{51}}] Vegetation dominated by exotic cool-season (C\textsubscript{3}) grasses
 	\item[{\color{BisonGreen!80}\ding{51}}] Management and/or research objectives focus on any C\textsubscript{3} grass
@@ -29,7 +30,7 @@ However, if none of the above conditions apply, one is probably not missing out 
 
 There are two basic types of information on fuels the fire scientist ought to obtain \emph{by fuel class}\footnote{While these would typically also be described by size class, in the workshop we are considering only 1 hr fuels, so we will consider each in terms of live and dead components.}: 
 
-\begin{itemize}
+\begin{itemize}[noitemsep]
 	\item Fuel load 
 	\item Fuel moisture
 \end{itemize}
@@ -39,7 +40,7 @@ There are two basic types of information on fuels the fire scientist ought to ob
 There are two broad categories of sampling methodologies, each with pros and cons specific to wildland fuel sampling, although the pros and cons likely apply to other sampling contexts, as well: 
 \begin{itemize}
 	\item \textbf{Destructive\textemdash}Samples are collected by physically removing material from the environment. 
-	\begin{itemize}
+	\begin{itemize}[noitemsep]
 		\item[\textit{Pros:}]Most accurate; probably needs fewest observations. Raw data in desired units (mass/area for fuel load, \% $H_{2}O$ for fuel moisture).
 		\item[\textit{Cons:}]Removes from the fire environment the very thing one seeks to describe within the fire environment. 
 		Time consuming. 
@@ -47,7 +48,7 @@ There are two broad categories of sampling methodologies, each with pros and con
 		Data not instantaneously available. 
 	\end{itemize}
 	\item \textbf{Non-destructive\textemdash}Sampling consists of observations that do not require the material to be disturbed. 
-		\begin{itemize}
+		\begin{itemize}[noitemsep]
 		\item[\textit{Pros:}]Doesn't remove any fuel from the fire environment. Most often requires less sample processing time \& effort, and data can be instantaneously available. 
 		\item[\textit{Cons:}]Likely requires more observations to minimize variability. Raw data rarely on a meaningful scale; often needs a conversion factor that in turn must often be derived from separate calibration efforts.
 	\end{itemize}
@@ -97,7 +98,7 @@ Once dried and weighed, the mass of the material in the bag is easily expressed 
 	\includegraphics[width=0.43\textwidth]
 		{science/Fuels/DryGrassBag}
 			\end{center}
-	\caption{On the left, a 0.25 mm\textsuperscript{-2} quadrat is about to be clipped with sheep shears (this might sound silly, but they are the secret weapon for efficient grass clipping). 
+	\caption{On the left, a 0.25 m\textsuperscript{-2} quadrat is about to be clipped with sheep shears (this might sound silly, but they are the secret weapon for efficient grass clipping). 
 		Once bagged, the samples are dried in a forced air drying oven at at least 60$\deg$C for at least 48 h. 
 		After drying, samples are weighed and their mass expressed on a per-area basis.
 		 } \label{fig:clipping}
@@ -135,25 +136,132 @@ Weigh dried biomass samples on a digital balance shortly after removal from the 
 The primary concern with weighing is accounting for the mass of the paper bag. 
 One can either dump the bag contents into a tared container on the balance, or weigh the sample in the bag and subtract the mass of the bag. 
 There are many arguments for the latter\textemdash it is often faster and less messy\textemdash but it is prone to error if different types of bags are used. 
-A best practice for data management is to enter a code for the bag type when entering mass data for each sample, or group of samples with a common bag type, and assign the mean mass of several empty bags to each code when subtracting bag weights prior to analysis. 
+A best practice for data management is to enter a code for the bag type when entering mass data for each sample, or group of samples with a common bag type, and assign the mean mass of several empty bags to each code when subtracting bag weights prior to analysis.
+
+\subsection{Nondestructive sampling}
+
+Nondestructive sampling of fuel load\textemdash i.e., measurements taken without physically removing material from the fuelbed\textemdash has several distinct advantages. 
+Chiefly, nondestructive sampling leaves the fuelbed intact, which ensures that the amount of fuel recorded in the data is actually the amount of fuel available to burn. 
+If too many clipping samples are taken from too small of an area around a fire behavior sensor, the removal of fuel could reduce intensity and rate of spread.  
+Fire behavior data from that sensor would not represent the rest of the fire. 
+
+The most common technique for non-destructive sampling of aboveground vegetation in North American rangeland is known as the Robel pole (Fig.~\ref{fig:RobelPole}). 
+Initially presented by \citet{robel1970}, the point was to make a measurement that combined the height and density of prairie vegetation to assess wildlife habitat.
+The pole itself was 3 cm in diameter, 150 cm long, and painted in 1 dm (10 cm) increments. 
+Observers stood the pole upright in the vegetation, stepped back 4 m, and bent down such that eye level was 1 m. 
+The lowest increment on the pole that was 50\% obscured by vegetation was recorded; this came to be known as the \emph{visual obstruction reading}, or VOR. 
+
 	
+\begin{figure*}[!b]
+		\caption{Two views of a Robel pole in place: Left, in very low biomass due to repeated grazing following a patch burn; Right, in tall, fully-headed out smooth brome grass in an idled CRP field.
+	} 
+	\begin{center}
+		\includegraphics[width=0.36\textwidth]
+		{science/Fuels/RobelPoleShort}~
+		\includegraphics[width=0.64\textwidth]
+		{science/Fuels/RobelPoleBrome}
+	\end{center}
+\label{fig:RobelPole}
+	%(Fig.~\ref{fig:RobelPole})
+\end{figure*}
 
+Crucially, the VOR had ``a striking relationship between the visual obstruction measurements and the weight of vegetation clipped from each transect \citep[][p. 296]{robel1970}.''
+From their analysis of data averaged at the transect level,\footnote{Standard practice has become to collect four VOR measurements around each pole placement, typically from the four cardinal directions, and average those readings for a single observation. This works well for fuel load measurements around fire behavior sensors not oriented along transects.} the relationship between the non-destructive VOR measured from the Robel pole and actual vegetation biomass (g m\textsuperscript{-2}) could be well explained ($R^2 = 0.97$) by the linear relationship 
 
-\subsection{History of fire in grasslands}
+\begin{equation}\label{eq:robel1}
+\text{biomass}_{g~m^{\text{-}2}} =  113 \cdot \text{VOR}_{dm} + 1.9
+\end{equation}
 
-Fire has been an intrinsic component of grasslands and other rangeland ecosystems since these biomes developed and spread around the world. 
-Grasslands as we know them today\textemdash including both the vegetation and characteristic animal communities\textemdash emerged after the last Ice Age, and have burned regularly and naturally since. 
-Many grass-dominated landscapes owe their existence to fire, especially in the US Great Plains \citep{mcgranahan2021}, where precipitation is substantial enough to support woody plant species capable of converting these landscapes to shrublands, woodlands, or even forests without regular burning. 
+The utility of VOR in estimating herbaceous biomass has been confirmed several times since the Robel pole was introduced. 
+Two studies in particular compared VOR to other non-destructive methods, and found it to be the most accurate in both hayfield/pasture situations and native rangeland \citep{harmoney1997, ganguli2000}. 
+\citet{vermeire2002} fit a new linear equation to a combined dataset from shortgrass, mixed-grass, and tallgrass prairie (1000-7000 kg ha\textsuperscript{-2}; $R^2 = 0.93$):
 
+\begin{equation}\label{eq:robel2}
+	\text{biomass}_{kg~m^{\text{-}2}} =  183 \cdot \text{VOR}_{cm} + 538
+\end{equation}
 
+While they note that users can get better accuracy by creating location-specific calibration equations by comparing VOR measurements to their own clipped quadrats, this general equation provides a good estimate across grasslands in general. 
+
+\subsection{Differentiating fuel components} 
+
+Often information is needed on specific parts of the fuelbed. 
+When live fuels are a consideration, live and dead components must be assessed separately. 
+Managers and researchers are often interested in litter separate of the total fuel load. 
+Below are approaches for each. 
+
+\subsubsection{Live vs. dead}
+
+The most accurate method to report live and dead components of the fuel load are to measure each separately. 
+``Hand sorting'' is the process of placing live and dead fuel in their own bags for separate weighing. 
+Samples can be sorted as they are clipped, or prior to drying; the sooner it occurs, the easier it is to distinguish live material from dead. 
+
+But hand sorting is very time-consuming, and fortunately alternative methods have been developed. 
+The \emph{constituent differential method} from \citet{gillen1993} uses known values of wet weight (mass in the field, just after clipping) and dry weight (mass after drying) for pure sub-samples of live and dead biomass to determine the fractions of each in combined samples.
+When fuel samples are clipped on the same day as a burn, the pure sub-samples of live and dead fuel can also be used for fuel moisture measurements.
+
+Live:dead fractions can also be estimated via visual categorization. 
+This is a more rapid technique that does not require any clipping from the fuel load, although its accuracy can be improved via calibration with clipping data from a local stand similar to the fuelbed. 
+Visual categorization based on color tends to over-predict curing, because fuels start to \emph{look} cured before their moisture content has actually gotten below the moisture of extinction \citep{kidnie2015}. 
+
+\subsubsection{Litter} 
+
+\paragraph{Destructive sampling}
+Perhaps the best way to measure litter separately when clipping plots is to clip all standing plant material down to the top of the litter layer\textemdash not to within 3 cm of the soil surface right away\textemdash then collect the litter into a separate bag. 
+Any remaining standing material can then be clipped to 3 cm of the soil surface and added to the first bag.
 
 \begin{marginfigure}
 	\begin{center}
-		\includegraphics[width=2.2in, 
-				trim={1.5cm 0cm 1cm 0.5cm}, clip=true]
-			{groundhogday}
-		\caption{Topography, weather, and the fuelbed are the three major drivers of wildland fire behaviour.
-			\index{Fire triangles!Fire behaviour|textit} \label{fig:FireBehaviourTriangle} } 
-		% (Fig.~\ref{fig:FireBehaviourTriangle})
+		\includegraphics[width=2.2in]
+		{science/fuels/MeasuringLitterDepth}
+		\caption{Measuring litter depth with a ruler. \label{fig:LitterRuler} } 
+		% (Fig.~\ref{fig:LitterRuler})
+	\end{center}
+\end{marginfigure} 
+
+\paragraph{Non-destructive sampling} 
+Specific litter depth measurements can be made with a ruler (Fig.~\ref{fig:LitterRuler}). 
+Do not rely on a separate reading on a Robel pole, which is likely too coarse\textemdash in terms of both the diameter of the pole pushing down litter, and the width of the increments\textemdash to provide a sufficiently precise measurement. 
+Find an average of multiple depth readings taken from a focal area (e.g., a quadrat). 
+Then, if necessary, additional work can likely be done to calibrate the average depth to biomass on a per-area basis. 
+
+  
+\section{Measuring fuel moisture} 
+
+As with fuel load, the most reliable measurements of fuel moisture content are made by clipping physical samples. 
+There are two differences to consider when clipping for fuel moisture samples: Less material is needed, making it less disruptive to the overall fuelbed, and fuel moisture samples must be weighed before drying as well as after. 
+Critically, \emph{the pre-drying mass should be taken as soon after clipping as possible}, to prevent moisture loss (Fig.~\ref{fig:GreenBalance}). 
+If samples are at risk of going for more than an hour or so before pre-drying mass can be determined, they should be handled in sealed, non-permeable containers like zippered baggies or bottles and kept out of direct sunlight and hot environments until they can be weighed. 
+
+ \begin{marginfigure}
+	\begin{center}
+		\includegraphics[width=2.2in]
+		{science/fuels/LiveFuelsBalance}
+		\caption{Green, live grass material is weighed separately prior to drying. \label{fig:GreenBalance} } 
+		% (Fig.~\ref{fig:GreenBalance})
 	\end{center}
 \end{marginfigure}
+
+There is debate around the best temperature to sufficiently dry samples intended for fuel moisture measurement.
+On one hand, \citet{gillen1993} only set their drying ovens to 45\degC; this is likely too low to be recommended for measuring fuel moisture content.
+\citet{matthews2010} compared the moisture content of dead grass fuels after 48 h in ovens set at 60\degC and 105\degC, and found they averaged 10\% and 8\% moisture, respectively, which could be a meaningful difference if, for example, dead fuel moisture is being used as an input for fire behavior calculations.\footnote{For example, a BehavePlus calculation for tallgrass prairie (fuel model 3) that assumes a 10 mph wind on flat ground indicates fire will spread 8 m min\textsuperscript{-2} faster at 8\% fine dead fuel moisture than at 10\% (83 vs. 75 m min\textsuperscript{-2}, respectively).}
+On the other hand, further work suggests drying temperature is less important, given the amount of variability inherent among samples, especially for live fuels \citep{jolly2011}. 
+
+If day-of fuel moisture measurements are required, there are a few options. 
+Firstly, smaller sample volumes can be sufficiently dehydrated in a microwave oven to get a reasonable estimation of fuel moisture. 
+Secondly, there are technologies that use electricity to determine the moisture content of plant material\textemdash many such devices are used in the grain industry, for example, to monitor moisture content.  
+Campbell Scientific manufactured a moisture meter specifically for wildland fuels (Fig.~\ref{fig:dmm}), but unfortunately only a limited number were produced and new units are not available.
+
+\begin{figure*}
+	\caption{The Campbell Scientific DMM-600 duff moisture meter uses electricity to instantaneously determine the moisture content of a sample. 
+		In addition to forest duff, it is effective for live fuel moisture in grassland fuels \citep{mcgranahan2019}.
+		Unfortunately the manufacturer's website indicates the product has been retired.
+	} 
+	\begin{center}
+		\includegraphics[width=0.46\textwidth]
+		{science/fuels/dmm}~
+		\includegraphics[width=0.54\textwidth]
+		{science/fuels/clipping}
+	\end{center}
+	\label{fig:dmm}
+	%(Fig.~\ref{fig:dmm})
+\end{figure*}

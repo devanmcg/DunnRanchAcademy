@@ -1,3 +1,10 @@
+%\usepackage[hyphens]{url}
+\hypersetup{colorlinks=true,
+	allcolors = {BisonGreen} }
+\urlstyle{same}
+\def\UrlBreaks{\do\/\do-}
+% \usepackage[hyphenbreaks]{breakurl}
+
 \usepackage[svgnames]{xcolor} % Required for colour specification
 \definecolor{BisonGreen}{RGB}{0,102,51}
 \definecolor{BisonYellow}{RGB}{255,204,0}
@@ -10,7 +17,9 @@
 \usepackage{soul} % accommodates underlined text
 \usepackage[toc,page]{appendix}
 \setcounter{secnumdepth}{-1} % Remove heading numerals
-\hypersetup{urlcolor = {BisonGreen} }
+
+
+
 
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -23,6 +32,7 @@
 
 \sectionfont{\color{BisonGreen}}
 \subsectionfont{\color{BisonGreen!75}}
+\subsubsectionfont{\color{BisonGreen!50}}
 
 \partfont{\raggedright}
 
@@ -44,7 +54,6 @@
 \usepackage{textcomp}
 %\usepackage{mathptmx,txfonts}
 \usepackage{lmodern}
-
 
 \newcommand{\degC}{{$^{\circ}$C}}
 
@@ -123,7 +132,7 @@
 % Add photo credit under lower right corner 
 %
 
-\newcommand\PhotoCredit[1]{
+\newcommand\ImageCredit[1]{
 \begin{flushright}
 	{\raggedleft{\vspace{-0.5em} \scalebox{0.5}{\emph{#1}}\vspace{-0.5em} } }
 \end{flushright}}
@@ -135,7 +144,7 @@
 
 \usepackage{seqsplit}
 
-\newcommand\PhotoIndex[4]{
+\newcommand\ImageIndex[4]{
 \index[credits]{\ref{#2}: #1, #3, #4}
 	
 }
