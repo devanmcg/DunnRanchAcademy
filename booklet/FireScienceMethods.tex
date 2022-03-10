@@ -13,19 +13,18 @@
 %
 % 	Summary
 %
-\addcontentsline{toc}{chapter}{Summary}
-\newgeometry{textwidth=15cm}
-\thispagestyle{empty}
-	\begin{mybox}{\section{Summary} \vspace{0.5cm}}
-		{\parbox{\textwidth}{ 
-			\input{sections/Summary} 
-		}}
-	\end{mybox}
-\restoregeometry
+%\addcontentsline{toc}{chapter}{Summary}
+%\newgeometry{textwidth=15cm}
+%\thispagestyle{empty}
+%	\begin{mybox}{\section{Summary} \vspace{0.5cm}}
+%		{\parbox{\textwidth}{ 
+%			\input{sections/Summary} 
+%		}}
+%	\end{mybox}
+%\restoregeometry
 %
 % 	Introduction
 %
-%\newgeometry{textwidth=15cm}
 \include{sections/intro}
 %
 %	TOC
@@ -44,10 +43,11 @@
 
 
 \part{Prescribed fire operations}
-	\include{sections/ops_basics.tex}
- \chapter{Ignitions} 
- \chapter{Holding} 
- \chapter{Pumps and engines} 
+%	\include{sections/ops_basics.tex}
+\include{sections/holding.tex} 
+\include{sections/ignitions.tex} 
+
+ %\chapter{Pumps and engines} 
 
 %\addcontentsline{toc}{chapter}{Bibliography}
 %
@@ -57,6 +57,9 @@
 \begin{fullwidth} % Makes the refs go all the way across page
 \bibliographystyle{elsarticle-harv} 
 \bibliography{FireScienceWorkshop.bib}
+\clearpage 
+\part{Worksheets} 
+	\include{worksheets.tex}
 \end{fullwidth}
 %
 \end{document}

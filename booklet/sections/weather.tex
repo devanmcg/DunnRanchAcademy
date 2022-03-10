@@ -49,11 +49,11 @@ Each NWS office also provides a daily Area Forecast Discussion that not only exp
 		\ImageCredit{https://www.weather.gov/media/eax/DssPacket.pdf, 4 March 2022}
 	\end{center}
 	\caption{An example of national 8-14 day temperature and precipitation outlooks provided by the Kansas City, MO NWS office.
-	} \label{fig:ExtendedOutlookExample}
+	} \label{fig:ExtendedOutlookExample}  
 	%(Fig.~\ref{fig:ExtendedOutlookExample})
 \end{figure} 
 
-Zone area forecasts\textemdash accessible by searching a town name at \href{http://weather.gov}{weather.gov}\textemdash are local forecasts generated at the county or municipality level by regional NWS offices.
+Zone area forecasts\textemdash accessible by searching a town name at \href{http://weather.gov}{weather.gov}{}\textemdash are local forecasts generated at the county or municipality level by regional NWS offices.
 Zone area forecasts provide a 7-day weather forecast and current conditions at the nearest NWS observation point, typically the closest airport. 
 These pages also provide hourly weather forecasts that illustrate predicted trends in several weather variables hour-by-hour over the next few days (Fig.~\ref{fig:BasicHourlyExample}).
 
@@ -84,7 +84,7 @@ These pages also provide hourly weather forecasts that illustrate predicted tren
 	%(Fig.~\ref{NationalProducts})
 \end{figure}
 
-National fire-related forecast data are compiled at \href{https://www.weather.gov/fire/}{weather.gov/fire (Fig.~\ref{NationalProducts})}. 
+National fire-related forecast data are compiled at \href{https://www.weather.gov/fire/}{weather.gov/fire (Fig.~\ref{fig:NationalProducts})}. 
 Some regional NWS offices provide fire-specific forecast information. 
 \href{https://forecast.weather.gov/product\_sites.php?site=NWS\&product=FWF}{Several regional offices around the country} provide text-based Routine Fire Weather Forecasts that give strategic fire weather forecasts for smaller zones within the area (Fig.~\ref{fig:RoutineFireFcstExample}).
 But not all offices provide fire-specific data, and not all regions provide the same information or even for the whole year.
@@ -206,11 +206,21 @@ Common tactical weather variables include:
 	%(Fig.~\ref{fig:SpinningWeather})
 \end{figure}
 
+ \begin{marginfigure}
+	\begin{center}
+		\includegraphics[width=2.2in]
+		{science/weather/CheckingRAWS}
+		\caption{Technicians service a Remote Access Weather Station (RAWS) that provides real-time fire weather (and sometimes fuel moisture) data to fire managers. 
+			Unlike NWS observations, which are typically made at airports, RAWS stations are typically placed in representative wildland fuelbeds.
+			 \label{fig:RAWS} } 
+		% (Fig.~\ref{fig:RAWS})
+	\end{center}
+\end{marginfigure}
 
+\subsection{Automated weather stations}
 
-\subsection{Automated weather stations} 
-
-Additionally, hourly weather observations made by the NWS and even Remote Access Weather Stations managed by state and federal agencies are all available together online at MesoWest \href{https://mesowest.utah.edu/}{mesowest.utah.edu}. 
+Additionally, hourly weather observations made by the NWS and even Remote Access Weather Stations managed by state and federal agencies are all available together online at MesoWest \href{https://mesowest.utah.edu/}{mesowest.utah.edu} (Fig.~\ref{fig:RAWS}).
+Several states in the Midwest, especially, support \emph{mesonets}\textemdash networks of remote weather stations useful for agricultural purposes that provide both real-time and historical weather data useful for prescribed burners.  
 
 
 \section{Historical weather data}
@@ -220,7 +230,7 @@ Additionally, hourly weather observations made by the NWS and even Remote Access
 \paragraph{Point-level data} 
 
 Many of the same resources for getting real-time observations from remote weather stations provide a means to access historical records. 
-Substantial requests for historical MesoWest data can be managed via their ``official'' API service \href{https://developers.synopticdata.com/mesonet/}{https://developers.synopticdata.com/mesonet/}, the \href{https://github.com/fickse/mesowest}{\emph{mesowest}} R package, and the \href{https://github.com/mesowx/MesoPy}{\emph{MesoPy}} python package.
+Substantial requests for historical MesoWest data can be managed via their API \href{https://developers.synopticdata.com/mesonet/}{https://developers.synopticdata.com/mesonet/}, the \href{https://github.com/fickse/mesowest}{\emph{mesowest}} R package, and the \href{https://github.com/mesowx/MesoPy}{\emph{MesoPy}} python package.
 
 \paragraph{Local data}
 
@@ -228,14 +238,3 @@ One of the best resources for historical weather in the US is gridMET \citep{aba
 Values represent data extremes (maximum temperature, minimum RH) interpolated for grid cells across the US via models using data from several weather observation networks. 
 The gridMET dataset includes several fire weather variables (e.g., dry bulb temperature, relative humidity, dew point, and wind vectors) as well as indicators of potential fire behavior including products from the National Fire Danger Rating System (100-hr fuel moisture, Burning Index \& Energy Release Component). 
 In addition to the steps listed on their website, gridMET data can be accessed via the \href{https://github.com/mikejohnson51/climateR/}{\texttt{climateR}} R package  and \href{https://explorer.earthengine.google.com/#detail/IDAHO\_EPSCOR\%2FGRIDMET}{Google Earth Engine}. 
-
- \begin{marginfigure}
-	\begin{center}
-		\includegraphics[width=2.2in, 
-		trim={1.5cm 0cm 1cm 0.5cm}, clip=true]
-		{groundhogday}
-		\caption{Topography, weather, and the fuelbed are the three major drivers of wildland fire behaviour.
-			\index{Fire triangles!Fire behaviour|textit} \label{fig:groundhog} } 
-		% (Fig.~\ref{fig:groundhog})
-	\end{center}
-\end{marginfigure}

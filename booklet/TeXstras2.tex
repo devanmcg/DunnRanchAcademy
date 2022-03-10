@@ -15,10 +15,6 @@
 \usepackage{setspace}
 \usepackage{indentfirst}
 \usepackage{soul} % accommodates underlined text
-\usepackage[toc,page]{appendix}
-\setcounter{secnumdepth}{-1} % Remove heading numerals
-
-
 
 
 \renewcommand{\familydefault}{\sfdefault}
@@ -36,12 +32,16 @@
 
 \partfont{\raggedright}
 
+% TOC, section headings, etc
 \usepackage{titlesec}
-%\titleformat{\chapter}
-%\setcounter{secnumdepth}{0} 
+\usepackage[toc,page]{appendix}
+\setcounter{secnumdepth}{-1} % Remove heading numerals
+\setcounter{tocdepth}{1}
 
 \usepackage{tocloft}
 \renewcommand{\cftsecfont}{\normalfont\sffamily}
+\setlength{\cftbeforechapskip}{.1ex}
+\setlength{\cftbeforesecskip}{-.5ex}
 
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -71,6 +71,7 @@
 
 \usepackage{xspace}
 
+\usepackage{pdfpages}
 \usepackage{graphicx} 
 \graphicspath{{figures/}}
 \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
