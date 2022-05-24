@@ -1,0 +1,17 @@
+---
+title: Attracted by higher crude protein, grasshopper abundance and offtake increase after prescribed fire
+author: 'Nicholas Gregory Heimbuch^A^ $\cdot$ Devan Allen McGranahan^B,D^ $\cdot$ Carissa L. Wonkka^C^ $\cdot$ Lance Vermeire^B^ $\cdot$ David Branson^C^ ^A^ University of Pittsburg, Pittsburg, PA, USA ^B^ USDA Agricultural Research Service, Livestock and Range Research Laboratory, Miles City, MT, USA ^C^ USDA Agricultural Research Service, Northern Plains Agricultural Research Laboratory, Sidney, MT, USA ^D^ Corresponding author. Email: Devan.McGranahan@usda.gov' 
+bibliography: ../booklet/FireScienceWorkshop.bib
+csl: mdpi
+output:
+  redoc::redoc:
+    reference_docx: arial_template.docx
+---
+  
+# Introduction 
+
+Let's write about fire, dudes. 
+Actually, we started to do that here: @mcgranahan2021. 
+
+  
+# References {-}

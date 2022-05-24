@@ -7,26 +7,34 @@ burns <- read_sf('./data/SpatialData/BurnUnits',
                  'DunnRanchBurnUnits') %>%
           st_transform(landsat_crs)
 
-# Load stars objects
-  pre <- read_stars('./data/SpatialData/DunnRanch_pre_2022.tiff') %>%
-            st_crop(burns)
-  post <- read_stars('./data/SpatialData/DunnRanch_post_2022.tiff') %>%
-            st_crop(burns)
-  delta <- read_stars('./data/SpatialData/DunnRanch_dNBR_2022.tiff') %>%
-            st_crop(burns)
-  
-# combine & convert to sf
-  multi <- c(pre, post, delta)
-  dNBR <- 
-    multi %>% 
-    setNames(c('pre', 'post', 'delta')) %>%
+# # Convert stars to sf and combine 
+
+dNBR <- 
+bind_rows(
+  read_stars('./data/SpatialData/DunnRanch_pre_2022.tiff') %>%
+            st_crop(burns) %>%
+    setNames('signal') %>%
     st_as_sf() %>%
-    st_intersection(burns)  %>%
+    st_intersection(burns) %>%
     select(-id) %>%
-    pivot_longer(values_to = 'signal', 
-                 names_to = 'period', 
-                 cols = c(pre, post, delta)) %>%
-    mutate(period = factor(period, levels = c("pre", 'post', 'delta')))
+    mutate(period = 'pre'), 
+  read_stars('./data/SpatialData/DunnRanch_post_2022.tiff') %>%
+            st_crop(burns) %>%
+    setNames('signal') %>%
+    st_as_sf() %>%
+    st_intersection(burns) %>%
+    select(-id) %>%
+    mutate(period = 'post') , 
+  read_stars('./data/SpatialData/DunnRanch_dNBR_2022.tiff') %>%
+            st_crop(burns) %>%
+    setNames('signal') %>%
+    st_as_sf() %>%
+    st_intersection(burns) %>%
+    select(-id) %>%
+    mutate(period = 'delta')
+) 
+  
+  # save(dNBR, file = './data/dNBR.Rdata')
 
 bi_nbr_gg <- 
   dNBR %>%
@@ -42,7 +50,7 @@ bi_nbr_gg <-
     scale_fill_viridis_c("NBR") +
   theme(plot.margin = unit(c(0,0,0,0), "lines"), 
         strip.text = element_text(size = 12)) 
-
+bb
 bi_dnbr_gg <- 
   dNBR %>%
     filter(Unit == "Bison", 
