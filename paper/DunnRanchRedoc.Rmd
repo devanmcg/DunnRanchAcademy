@@ -141,6 +141,8 @@ Upstairs from participant quarters are accommodations for the cadre and faciliti
 TNC has fire capacity *Ryan, write a line or two about DRP and TNC Iowa/Missouri fire resources--how they are organized and deployed?*
 Cooperators in the state and region *Chris, write a line or two about how USFWS fits in?*
 
+![\\label{DunnRanch}The Nature Conservancy's Dunn Ranch Prairie, in northern Missouri, USA, hosted the 2022 hands-on workshop in fire science methods. In the large map on right, the Dunn Ranch is highlighted in green and indicated in the inset by the blue arrow.](DunnRanchMap.png)
+
 ### Personnel and equipment
 
 Workshop leadership was divided among a cadre of fire science and fire management professionals, organized under a Prescribed Fire Burn Boss (RXB2) in charge of fire management planning and decisionmaking for TNC Missouri. 
