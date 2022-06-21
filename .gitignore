@@ -76,5 +76,6 @@ latex.out/
 *.ilg
 *.ind
 
-
+*.Rproj
 .Rproj.user
+.Rproj.user/*
