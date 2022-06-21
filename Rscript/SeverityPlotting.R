@@ -32,7 +32,8 @@ bind_rows(
     st_intersection(burns) %>%
     select(-id) %>%
     mutate(period = 'delta')
-) 
+) %>%
+  mutate(period = factor(period, levels = c("pre", "post", "delta")))
   
   # save(dNBR, file = './data/dNBR.Rdata')
 
@@ -50,7 +51,7 @@ bi_nbr_gg <-
     scale_fill_viridis_c("NBR") +
   theme(plot.margin = unit(c(0,0,0,0), "lines"), 
         strip.text = element_text(size = 12)) 
-bb
+
 bi_dnbr_gg <- 
   dNBR %>%
     filter(Unit == "Bison", 

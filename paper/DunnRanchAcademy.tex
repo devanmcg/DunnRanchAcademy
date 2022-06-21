@@ -1,0 +1,558 @@
+\documentclass[fire,article,submit,moreauthors,pdftex]{Definitions/mdpi} 
+
+% MDPI internal commands
+\firstpage{1} 
+\makeatletter 
+\setcounter{page}{\@firstpage} 
+\makeatother
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{2022}
+\copyrightyear{2022}
+\externaleditor{Academic Editor: Firstname Lastname} 
+\datereceived{} 
+\dateaccepted{} 
+\datepublished{} 
+\hreflink{https://doi.org/} % If needed use \linebreak
+
+%=================================================================
+% Add packages and commands here. The following packages are loaded in our class file: fontenc, calc, indentfirst, fancyhdr, graphicx, lastpage, ifthen, lineno, float, amsmath, setspace, enumitem, mathpazo, booktabs, titlesec, etoolbox, amsthm, hyphenat, natbib, hyperref, footmisc, geometry, caption, url, mdframed, tabto, soul, multirow, microtype
+
+%\usepackage{natbib}
+% \bibliographystyle{apalike}
+% % 
+\usepackage{fixltx2e}
+\usepackage{longtable,booktabs}
+\usepackage[utf8]{inputenc}
+
+\usepackage{lmodern}
+
+%=================================================================
+%% Please use the following mathematics environments: Theorem, Lemma, Corollary, Proposition, Characterization, Property, Problem, Example, ExamplesandDefinitions, Hypothesis, Remark, Definition
+%% For proofs, please use the proof environment (the amsthm package is loaded by the MDPI class).
+
+%=================================================================
+% Full title of the paper (Capitalized)
+\Title{The Dunn Ranch Academy: Developing wildland fire literacy through hands-on experience with prescribed fire science and management}
+
+% MDPI internal command: Title for citation in the left column
+\TitleCitation{Hands-on development of wildland fire literacy}
+
+\newcommand{\orcidauthorA}{0000-0002-3763-7641} 
+\newcommand{\orcidauthorB}{0000-0000-0000-000X}
+
+
+% Authors, for the paper (add full first names)
+\Author{Devan Allen McGranahan $^{1,}$\orcidA{}*, Craig Maier$^{2}$, Ryan Gauger$^{3}$, Chris Woodson$^{4}$, and Carissa L. Wonkka$^{5,}$\orcidB{}}
+
+% Authors, for metadata in PDF
+\AuthorCitation{McGranahan, D.A.; Maier, C.; Gauger, R.; Woodson, C.; Wonkka, C.L.}
+
+% Affiliations / Addresses (Add [1] after \address if there is only one affiliation.)
+\address{%
+$^{1}$ \quad USDA Agricultural Research Service, Livestock \& Range Research Laboratory, Miles City, MT 59301 USA; Devan.McGranahan@usda.gov\\
+$^{2}$ \quad \\
+$^{3}$ \quad \\
+$^{4}$ \quad \\
+$^{5}$ \quad USDA Agricultural Research Service, Northern Plains Agricultural Research Laboratory, Sidney, MT 59270 USA; Carissa.Wonkka@usda.gov}
+
+% Contact information of the corresponding author
+\corres{Correspondence: \href{mailto:Devan.McGranahan@usda.gov}{\nolinkurl{Devan.McGranahan@usda.gov}}}
+
+% Abstract (Do not use inserted blank lines, i.e. \\)
+\abstract{Wildland fire literacy is the capacity for wildland fire professionals to understand and communicate fundamentals of fuel and fire behavior within the socio-ecological elements of the fire regime. While wildland fire literacy is best developed through education, training, and experience in wildland fire science and management, too often development among early-career professionals is deficient in one or more aspects of full literacy. We report on a hands-on prescribed fire methods workshop designed to provide training and experience in measuring and conducting prescribed fire, with a focus on grassland ecosystems. The workshop was held March 2022 at The Nature Conservancy's Dunn Ranch Prairie in northern Missouri. It consisted of hands-on training and experience in measuring fuels, fire weather, and fire behavior. Prescribed fire operations training facilitated both hands-on learning and vicarious learning by rotating squad roles among several small sub-units on the first day of live fire exercises. Participants then gained experience as crewmembers for two larger prescribed burns (60 and 200 ha). We report here on the successes and lessons learned from perspectives of both participants and the instructor cadre for what was widely regarded as a successful workshop.}
+
+% Keywords
+\keyword{dragon; dagger; bear; keyword 3 (list three to ten pertinent keywords specific to the article, yet reasonably common within the subject discipline.)}
+
+\begin{document}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+Rapidly addressing and effectively managing the ``wicked problems'' of wildland fire management--from controlling wildfires to administering prescribed burns in fire-dependent ecosystems--demands \emph{wildland fire literacy}--the capacity for wildland fire professionals to understand and communicate fundamentals of fuel and fire behavior within the socio-ecological elements of the fire regime (Fig.~\ref{WalletCard}).
+But existing modes of education, training, and experience-building are insufficient to bridge persistent gaps between wildland fire science and management.
+In this Feature Paper, we summarize the history and state of professional development in the wildland fire community and describe the motiviations, successes, and opportunities to improve a novel mode of integrating both training and experience in both studying and conducting prescribed fire.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\columnwidth]{WalletCard.pdf}
+\caption{The wallet card figure from McGranahan \& Wonkka (2018) that describes the components of the fire environment most relevant to two arenas of the wildland fire professional: In the field, and in the office.}
+\label{WalletCard}
+\end{figure}
+
+\hypertarget{background-on-wildland-fire-management-and-training}{%
+\subsection{Background on wildland fire management and training}\label{background-on-wildland-fire-management-and-training}}
+
+\begin{quote}
+In the measurement of fire weather and forest inflammability \ldots{} it is necessary to use many methods peculiar to this work.
+Some of these methods are familiar to meteorologists, but few foresters have had any appreciable training in meteorology.
+Others are of such recent development and so specially designed for forest protection that they are unknown to most meteorologists and are not yet taught in the schools of forestry or described in any textbooks. (\citet[][p.~1]{gisborne1936})
+\end{quote}
+
+While the United States wildland fire community has long recognized the need to improve education and training in fuels, fire behavior, and management, a cohesive curriculum encompassing the science and practice of wildland fire use has yet to emerge.
+On one hand, some of the original standards for fire management and research on the fire environment were developed in tandem, given the applied emphasis Harry Gisborne placed on using his seminal work on weather and fuel moisture to inform the preparation, deployment, and safety of fire control resources, beginning in the 1920s \citep{hardy1983}.
+On the other hand, while theoretically applicable to using wildland fire as well as fighting it, these standards were solidly oriented within the mode of fire suppression: \emph{the sole purpose of the weather and inflammability measurements described herein is to improve forest-fire control} \citep{gisborne1936}.
+The US Forest Service, having effectively defeated any support of ``light burning'' or other wildland fire use, controlled fire research funding as early as 1928 and by 1935 clearly established an aggressive policy of suppression \citep{pyne2015}.
+Enclaves of advocates for fire use moved their discussions beyond the reach of the anti-fire establishment, such as the Tall Timbers Fire Ecology Conference \citep{pyne2015}.
+
+Management agencies began to adopt prescribed burning through the latter half of the 20\textsuperscript{th} century.
+Legislative, bureaucratic, and even cultural changes first opened the National Park Service then the US Forest Service to prescribed fire that included both pre-planned and intentionally-set burns and natural ignitions allowed to spread through designated wilderness areas under prescribed conditions \citep{pyne2015}.
+The Nature Conservancy conducted its first prescribed fire in 1962 (Fig.~\ref{TNCfire}; refs.~\citep{pyne2015, tnc2022}).
+
+\begin{figure}
+\centering
+\includegraphics[width=1\columnwidth]{TNC_fire.jpg}
+\caption{The Nature Conservancy conducted its first prescribed fire at the Helen Allison Significant Natural Area, Minnesota, in 1962. \label{TNCfire}}
+\end{figure}
+
+Meanwhile, management of wildland fire operations developed as well, becoming more specialized as standardized command-and-control systems evolved.
+Disastrous fires in 1970 prompted developments that became the National Wildfire Coordinating Group (NWCG) and the Incident Command System (ICS), which the NWCG in turn adopted and agencies had widely employed by 1985 \citep{dague2015, wilson1978}.
+The ICS has facilitated cross-boundary collaboration among agencies and jurisdictions in the US as well as among participating nations \citep{goldammer2004}.
+But some local fire departments bristle at the constraints of the ICS \citep{jensen2011}, and the hierarchical structure of training, certification, and qualification for positions within the ICS can create a barrier to allowing otherwise experienced personnel conduct prescribed burns.
+In fact, as early as the 1980s, the US Fish and Wildlife Service condensed the content of 140 hours worth of NWCG coursework into a 36-hr course that combined principles of both prescribed fire and wildfire suppression, to reflect the changing demands on USFWS personnel \citep{murphy1987}.
+
+\hypertarget{state-of-wildland-fire-education-and-training-today}{%
+\subsection{State of wildland fire education and training today}\label{state-of-wildland-fire-education-and-training-today}}
+
+\begin{quote}
+The ideal system for preparing the next generation of fire professionals would integrate and/or provide in parallel education, training, and experience.
+Such a system would share characteristics with educational models used in other professions such as law, business, and medicine, where coursework is offered in conjunction with summer job experiences, training courses, and extensive internships. (\citet[][p.344]{kobziar2009})
+\end{quote}
+
+Unfortunately wildland fire professionals rarely achieve a sufficient amount of training, education, and experience.
+Kobziar \citep{kobziar2009} identified three common syndromes of lopsided professional development (Fig.\textasciitilde{}\ref{FireTrainingTriangles}).
+The main issues are disparities between \emph{education} (receiving knowledge on the fire environment, fire effects, and how and why one might conduct a prescribed fire), \emph{training} (being taught how to use and apply various fire management resources), and \emph{experience} (a background of having performed fire management tasks).
+Employees of agencies and non-governmental organizations with substantial training and experience, such as seasonal firefighters and other crewmembers, have often received limited education in fire science and encounter limited opportunity to receive more instruction.
+Meanwhile, graduates of academic programs, academic researchers, and staff in professional positions might have a substantial amount of education and even some training, but lack experience working on actual fires.
+For example, technical specialists like Resource Advisors (READ) need only to meet basic Firefighter Type 2 (FFT2) certification and physical fitness requirements before being assigned to complex incidents: \emph{the bottom line is that, in my opinion, the general lack of hands-on training of fire archaeologists after they earn their red cards is a recipe for disaster.} \citep[p.~3]{hangan2010}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\columnwidth]{FireTrainingTriangles.png}
+\caption{\citet{kobziar2009} identified three components of professional development in the wildland fire community that we identified as essential to developing wildland fire literacy. But unfortunately, all too often, certain syndromes of lopsided professional development persist among various members of the wildland fire community. \label{FireTrainingTriangles}}
+\end{figure}
+
+Gaining experience with prescribed fire, specifically, has been a persistent problem.
+Writing in 1985, Heitlinger \& Davis \citep{heitlinger1985} highlighted the need for hands-on experience with prescribed fire among their review of available workshops and university courses related to fire ecology and management.
+Decades later, just a few universities offer programs in prescribed fire, specifically, and only a subset of those provide hands-on experience with live fire \citep{kobziar2009}.
+Oklahoma state University is one example that augments classroom-based courses in fire ecology with experiential learning that includes conducting prescribed fires; a survey of participants indicated that hands-on experience with prescribed fires were the most valuable opportunities of the program \citep{scasta2015}.
+Outside of the university setting, opportunities for hands-on experience with prescribed fire range from demonstrations aimed at landowners (e.g., Society for Range Management's Range Practicum; \citep{barnes2021}) to multi-day learn-and-burn operations (e.g., Prescribed Fire Training and Exchanges, or TREX; \citep{spencer2015}).
+
+\hypertarget{bridging-gaps-between-science-and-management}{%
+\subsection{Bridging gaps between science and management}\label{bridging-gaps-between-science-and-management}}
+
+\begin{quote}
+There are reasons other than to smell smoke and escape from the classroom to justify the time and expense involved in setting up a fire exercise. (\citet[][p.~50]{andrews1989})
+\end{quote}
+
+Despite these advancements in prescribed fire experience, there remains a paucity of fire science integration in the education and training of wildland fire and natural resource professionals.
+In many tertiary natural resource programs, education is often limited to fire effects on natural resources, with students gaining little exposure to interactions between fuels, weather, and the fire behavior that drives fire effects.
+As for training, only at the highest levels of leadership or position specialization do managers pursuing professional development through the ICS receive extensive and comprehensive training in the wildland fire environment (Table~\ref{tab:training}).
+Basic wildland firefighter certification includes only a minimal amount of training in fire behavior (S-190: 7 hrs in-person and 6-8 hours online).
+The second fire behavior course, S-290, introduces interactions between fuels and topography, weather, and fire behavior, but is primarily aimed at training supervisors to recognize potentially dangerous conditions for their crew.
+Even within the context of wildfire suppression, training to recognize and mitigate hazards associated with extreme fire behavior does not reflect the most recent scientific understanding, and the needs of crew leadership on the fireline often differ from those of incident command \citep{werth2016}.
+Knowledge gaps between research and prescribed fire management appear to be even less recognized in the wildland fire community.
+
+Although gaps between researchers and practitioners have been described in almost every professional field from health care to conservation biology \citep{stott2012, prendergast1999} and across land management broadly \citep{carter2020}, gaps between wildland fire scientists and managers can be particularly wide.
+Often, the gaps can be literal distance in space and time, in the sense that many scientists cannot participate in or even directly observe fire management operations that adhere to ICS requirements for training and certification.
+As ICS protocols expand from federally-managed wildfire incidents to prescribed fire operations managed by state agencies and NGOs (e.g., TNC adopted NWCG ICS standards in \ldots{} \emph{Ryan can you help me out here?}), scientists are increasingly distanced from making real-time observations and measurements of fire as it happens.
+
+Not only are education, training, and experience necessary to develop wildland fire literacy, the triad must be developed in both the realms of fire science and management (Fig.~\ref{ScienceManagement}).
+While completion of online coursework can help clear some administrative hurdles for scientists posed by ICS requirements, there are few substitutes for the experience gained by experiencing live fire.
+Observation of live fire has long been recognized as a critical factor in understanding fire behavior and the challenges it poses to fire management \citep{alexander1990, andrews1989}.
+Understanding how managers conduct safe prescribed burns and the various constraints (time, weather, policy) that managers must weigh against desired fire behavior is essential to designing feasible, and effective, fire science research protocols.
+And conversely, understanding which components of the fire environment can be measured and how should help fire managers understand how to incorporate new fire science information into their planning and operations.
+
+Here, we report on a Hands-on Fire Science Methods workshop designed to promote wildland fire literacy, held in the Midwestern US in the spring of 2022.
+We provide an overview of the workshop's objectives and activities, as well as a reflective critique in the form of ``lessons learned'' informed by a group debriefing of the workshop leadership and instructors (the cadre) and an anonymous online survey of workshop participants.
+While the workshop was widely viewed as a success, we also discuss elements that merit consideration or improvement in future iterations of this workshop or others with similar objectives and/or audiences.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\columnwidth]{ScienceManagementTent.png}
+\caption{\label{ScienceManagement}A reminder that even balanced fire professional development must include an additional dimension that includes wildland fire management/application and scientific knowledge use and production (research).}
+\end{figure}
+
+\hypertarget{briefing}{%
+\section{Briefing}\label{briefing}}
+
+Here we describe the intentions and operations of the course.
+
+\hypertarget{leaders-intent}{%
+\subsection{Leaders' intent}\label{leaders-intent}}
+
+The workshop was intended to provide early-career fire professionals hands-on experience with tools and techniques relevant to prescribed fire science and management, with a focus on grassland ecosystems.
+The objective was to develop wildland fire literacy by emphasizing two distinct arenas: Best practices for conducting robust wildland fire science, including collecting data on fuels, fire weather, and fire behavior; and strategies and tactics for safe and effective prescribed fire operations.
+Broadly speaking, the workshop was designed to meet the objective by providing equal opportunity for early-career professionals to learn and experience both fire science data collection and conducting prescribed burns, regardless of their familiarity--or lack thereof--with either arena.
+Activities were designed to be as hands-on as possible and aimed to provide ample opportunity for students to learn from course instructors as well as other participants.
+
+A secondary intention was to provide career development opportunities for participants with specific needs that fit into the workshop.
+This was aimed mostly at trainees with open \href{https://www.nwcg.gov/publications/position-taskbooks/about}{Position Taskbooks} for qualification to achieve ICS positions.
+While no such opportunities were guaranteed to participants, leadership recognized that several participants had open taskbooks for which members of the teaching cadre could provide signatures if the opportunity for trainees to perform tasks arose during the workshop.
+\emph{As such, the workshop was formally included in the ICQS as\ldots{} Ryan please replace this sentence with something about the workshop as an Incident?}
+
+\hypertarget{procedure}{%
+\subsection{Procedure}\label{procedure}}
+
+Here we describe logistical considerations from the perspective of planning a successful operation that included as much flexibility as possible to satisfy workshop objectives without letting too much chaos show through the cracks.
+
+\hypertarget{date-and-location}{%
+\subsubsection{Date and location}\label{date-and-location}}
+
+The Hands-on Fire Science Methods Workshop was held 14-18 March 2022 at The Nature Conservancy's Dunn Ranch Prairie near Eagleville, Missouri, USA.
+This week was specifically selected from a review of spring break schedules for popular natural resource universities in the Midwestern US to accommodate as many graduate students as possible.
+While several locations within the Midwest were considered, TNC's Dunn Ranch Prairie met several important criteria:
+
+\begin{itemize}
+\item
+  \emph{Large area of potential burn units}. \emph{Ryan, can you add some stuff in here about total acreage and maybe the number of burn units maintained at DRP?}
+\item
+  \emph{Latitude conducive to spring fire}.
+  Although weather is always an uncontrollable variable, mid-March in northern Missouri is typically warm and dry enough for prescribed burning, but spring has typically not progressed to the point that vegetation is overly green.
+\item
+  \emph{On-site facilities for accommodation and instruction.}
+  Recent infrastructure improvements at the Dunn Ranch include a bunkhouse with shared kitchen and laundry facilities, in addition to indoor and outdoor common areas for group instruction and communal meals.
+  Upstairs from participant quarters are accommodations for the cadre and facilities for their daily planning meetings.
+\item
+  \emph{Local and regional fire resources}.
+  TNC has fire capacity \emph{Ryan, write a line or two about DRP and TNC Iowa/Missouri fire resources--how they are organized and deployed?}
+  Cooperators in the state and region \emph{Chris, write a line or two about how USFWS fits in?}
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\columnwidth]{DunnRanchMap.png}
+\caption{\label{DunnRanch}The Nature Conservancy's Dunn Ranch Prairie, in northern Missouri, USA, hosted the 2022 hands-on workshop in fire science methods. In the large map on right, the Dunn Ranch is highlighted in green and indicated in the inset by the blue arrow.}
+\end{figure}
+
+Food was provided for the participants, through funding from the Tallgrass Prairie and Oak Savanna Fire Science Consortium specifically budgeted to support this workshop (travel reimbursement was also provided to participants who needed it).
+Basic breakfast and lunch provisions were available in the communal dining every day for self-constructed meals.
+Each evening, a local restaurant catered a hot buffet in the communal dining area.
+Ample leftovers contributed to the available lunch options.
+It was widely hypothesized that no fire crew has ever encountered so much gravy.
+
+\hypertarget{personnel-and-equipment}{%
+\subsubsection{Personnel and equipment}\label{personnel-and-equipment}}
+
+Workshop leadership was divided among a cadre of fire science and fire management professionals, organized under a Prescribed Fire Burn Boss (RXB2) in charge of fire management planning and decisionmaking for TNC Missouri.
+The cadre met virtually several times prior to the workshop to coordinate roles, responsibilities, and logistics, and during the workshop met nightly to debrief and plan the next day's activities.
+All members of the cadre were, at a minimum, certified as FFT2 under the ICS and current in fitness tests to ensure their availability to contribute to all components of the workshop.
+
+The USDA Agricultural Research Service provided two scientists to lead fire science modules; as each are experienced in conducting prescribed fire, the fire science instructors also supported fire operations modules by serving as additional fireline supervisors.
+In addition to TNC's burn boss, TNC and the US Fish and Wildlife Service provided personnel qualified as squad bosses and incident commanders.
+Having led the planning and recruitment phases ahead of the workshop, the coordinator of the Tallgrass Prairie and Oak Savanna Fire Science Consortium assisted both fire science and operations modules as necessary in addition to handling logistics for participants on-site.
+
+TNC and USFWS also provided all necessary equipment including hand tools, engines, and all-terrain vehicles, as specified in TNC-approved burn plans.
+Local TNC resources at Dunn Ranch Prairie prepared burn units and provided communication, transport, and backup suppression resources.
+
+Workshop enrollment consisted of 10 participants, split nearly equally between two broad groups: graduate students and early-career professionals in education, research, and outreach; and early-career professionals in natural resource management.
+Natural resource managers represented TNC and two tribal authorities in Minnesota.
+
+On the first day, workshop participants were assigned to two, 5-person squads that remained consistent through the entirety of the workshop.
+Consistent squads addressed two goals: firstly, it simulates the close, interactive working environment that characterizes wildland fire operations and provides opportunity for \emph{crew cohesion}, which has been identified as an preventative factor in reducing accidents on incidents \citep{mcdonald2003}.
+Secondly, this crew cohesion might also contribute to developing \emph{bonds of empathy} among the group, which has been associated with the emergence of intuitive thinking among group members in science education literature \citep{park2020}.
+
+\hypertarget{the-operation}{%
+\section{The operation}\label{the-operation}}
+
+Workshop participants were given educational materials at the beginning of the workshop that covered both fire science research methods and prescribed fire operations.
+The booklet served as the primary reference for all training modules and included multiple copies of datasheets and protocols for hands-on experience.
+
+Each day of the workshop was divided into time for fire science or fire operations modules.
+The first day was dedicated to training and orientation with equipment for both Science and Operations modules, with introductions to application techniques for both module types, as well (Fig.\textasciitilde{}\ref{TrainingDay}).
+The second and third days consisted of live fire exercises on TNC burn units (Fire Operations) in the afternoon, prior to which morning Fire Science modules consisted of measuring fuels and deploying instruments to collect fire weather and fire behavior data.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\columnwidth]{TrainingDay.pdf}
+\caption{\label{TrainingDay}The first day of the workshop was focused on introducing students to the tools they would be using and training them on safe and effective operation ahead of live fire. Participants were introduced to measuring fire weather with both the Belt Weather Kit and automated weather stations, pump operations, and measuring fuel load with both destructive and non-destructive techniques.}
+\end{figure}
+
+\hypertarget{fire-operations}{%
+\subsection{Fire operations}\label{fire-operations}}
+
+\begin{quote}
+Lighting several fires is the only way to learn what environmental and fuel conditons are required to produce desired fire behavior. (McPherson et al. \citep{mcpherson1986})
+\end{quote}
+
+Workshop participants were included in three live fire exercises.
+The first exercise was small-scale and focused on training and introducing students to the workshop chain of command, while the second and third exercises were focused on providing hands-on experience in studying and applying prescribed fire at the landscape scale.
+
+\hypertarget{training}{%
+\subsubsection{Training}\label{training}}
+
+The first live fire exercise was a series of seven small, independent burn units (sub-units) around the Dunn Ranch Prairie headquarters (Fig.~\ref{HQmap}).
+Burns proceeded one at a time under the supervision of the TNC RXB2 burn boss.
+One qualified squad boss (FFT1) and one fire science instructor were attached to each squad as mentors, available to answer questions and offer advice without distracting the burn boss from general oversight.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\columnwidth]{HQburns.pdf}
+\caption{\label{HQmap}The seven sub-units around the Dunn Ranch Prairie headquarters used for the training live fire exercises, in which squads swapped out as the burn crew among sub-units, and squad leadership rotated each time the squad was up to burn. Numbers denote hectares of each sub-unit and the white triangle indicates where the leadership allowed a spot fire to slop over the walking trail. Note that the perimeter of the headquarters area is maintained as lawn, and as such were short and green at the time of the workshop, serving as excellent firebreaks.}
+\end{figure}
+
+The burn for each sub-unit was planned and conducted by a single squad, with squads alternating among sub-units and squad leadership rotating among squad members each time the squad was up to burn.
+When not actively burning, the other squad was tasked with first debriefing their previous burn, scouting and planning their next burn, and watching their peers conduct the current burn.
+Both the on-off approach among squads and the rotation of leadership within squads facilitated two modes of experiential learning: \emph{hands-on learning} and \emph{vicarious learning}.
+There is evidence that students can learn as much, if not more, by observing their peers perform tasks (vicarious learning) than through their own learning by doing (hands-on learning) \citep{stegmann2012}, although students often prefer the hands-on approach \citep{reime2017}.
+
+\hypertarget{experience}{%
+\subsubsection{Experience}\label{experience}}
+
+Participants received hands-on experience with prescribed fire by conducting two management-scale burns at Dunn Ranch Prairie (Fig.~\ref{FireExperience}.
+These units were approximately 60 and 200 ha (150 and 500 acres).
+Each live fire exercise began with a crew briefing on the management objectives of the burn, leadership structure and supervisory assignments, current and expected fire weather, available resources and personnel assignments, and contingency plans.
+In both cases, squads were assigned as crewmembers to one of two lines under the supervision of TNC's fire management personnel.
+Line officers rotated participants through tasks, emphasizing ignitions operations with drip torches; holding operations with hand tools and pumps; and mop-up.
+Fire science instructors served primarily as lookouts and back-up crew members, and engaged participants in conversation about the operation or observed fire behavior as opportunity allowed.
+
+\emph{There should be another paragraph here but I'm not sure what else we want to say?}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\columnwidth]{FireExperience.pdf}
+\caption{\label{FireExperience}Workshop participants gained hands-on experience with prescribed fire as crewmembers burning two management units at Dunn Ranch Prairie. Clockwise from top left: The TNC RXB2 leads a briefing at the beginning of the first, 60-ha unit. Two course participants use a wet line from the TNC engine to burn out a fenceline. Under supervision from a TNC line officer, a course participant uses water to limit combustion of coarse woody debris in a ravine along the control line. Course participants patrol after setting a head fire from a county road along the 200 ha burn unit.}
+\end{figure}
+
+\hypertarget{fire-science}{%
+\subsection{Fire science}\label{fire-science}}
+
+\begin{quote}
+Fire's ecology is not restricted to fire's ``effects'', but to the very properties that make open combustion possible. (S.J. Pyne \citep{pyne2004}, p.~126)
+\end{quote}
+
+The second core element of the workshop was training and experience in field methods to quantify relevant components of the fire environment.
+Open combustion requires each of heat, oxygen, and fuel; how quickly and intensely fire spreads depends on weather, vegetation, and several characteristics of the physical environment (Fig.\textasciitilde{}\label{wallet_card}).
+Variability in fire effects can often be attributed to variability in how much energy organs, organisms, or soil particles are exposed to during heating, and variability in objective energy exposure at a given landscape position can be described by several key variables of fire weather and fire behavior \citep{mcgranahan2021}.
+
+\hypertarget{training-1}{%
+\subsubsection{Training}\label{training-1}}
+
+On the first day, workshop participants were introduced to tools and protocols for measuring fire weather, fuels, and fire behavior.
+For training in measuring fire weather, participants were first introduced to the standard belt weather kit, with a focus on measuring relative humidity with the sling psychrometer and wind speed with the \emph{plastic venturi action wind meter} \citep{BeltWxKit}.
+Participants were then introduced to an automated datalogging weather station (Kestrel 5500FW).
+For both types of instruments, best practices for location and frequency of observations were discussed.
+
+Fuel sampling consisted of both non-destructive and destructive sampling, using a Robel pole to classify visual obstruction readings (VOR; \citep{robel1970}), and clipping quadrats, respectively.
+Clipped quadrats were placed around the sight lines of the Robel pole to facilitate calibration of VOR with actual biomass \citep{vermeire2002}.
+Participants were also introduced to non-destructive measurements of total fuel load using a ceptometer, which compares photosynthetically-active radiation (PAR) above the plant canopy and at the soil surface to estimate the amount of vegetation.
+Methods to measure live and dead fuel moisture and relative load were also described and tools such as a duff moisture meter for instantaneously measuring live fuel moisture demonstrated \citep{mcgranahan2019}, but the live fuel component at the Dunn Ranch at the time of the workshop was negligible.
+
+Participants were trained in measuring fire behavior with the FeatherFlame thermocouple datalogger system \citep{mcgranahan2021b}, which uses an open-source, Arduino-based microcontroller platform (Adafruit Industries; Brookyln, NY; \href{https://adafruit.com}{adafruit.com}) to read and log temperatures from industrial-grade K-type thermocouples (Omega Engineering; Norwalk, CT; \href{https://omega.com}{omega.com}).
+Although temperature alone is often an inadequate measure to describe fire behavior in that it does not relate directly to an important driver of variability in fire effects--e.g., intensity, or the amount of energy released by combustion--temperature data from thermocouples are widely used in fire ecology \citep{mcgranahan2020}.
+
+A novel advantage of the FeatherFlame system over many conventional thermocouple datalogging systems is the simple integration of multiple thermocouple channels per datalogger.
+When arranged appropriately, such as in an equilateral triangle \citep{simard1984}, simultaneous temperature records associated with a single timestamp facilitate measuring \emph{two-dimensional rate of spread}.
+Many conventional measurements of fire spread rate--so-called 1-D measurements \citep{finney2021}--require direct observation along a pre-determined vector that is exactly perpendicular to an evenly-advancing flame front.
+But large burn areas and complex ignition patterns often preclude direct observation, and uneven fuel or other obstacles that create variability in the flame front make a perpendicular observation vector difficult.
+But the 2-D array can record rate of spread without direct observation and free of each of the abovementioned pitfalls, thus translating data on temperature into more useful information on fire behavior.
+
+\hypertarget{experience-1}{%
+\subsubsection{Experience}\label{experience-1}}
+
+Participants measured fuel load and deployed 2-dimensional fire behavior instrument arrays at three points within both units used in the large-scale live fire exercises.
+Squads rotated between fuels sampling and deploying thermocouple dataloggers.
+After recieving training directly from the fire science instructors, individuals within each squad then explained how the sampling schemes and systems worked to their peers (Fig.\textasciitilde{}\ref{thermocouples}).
+
+The three flame temperatures recorded from the aboveground thermocouple array allowed calculation of rate of spread for each fire, and thermocouple probes placed at the soil surface provided soil heating data (Fig.\textasciitilde{}\ref{thermocouples}).
+While there was considerable variability in flame temperatures within burns, soil surface heating was more consistent within and among burns, with the exception of a soil surface probe that might not have been correctly deployed on the first burn 15 March, Fig.\textasciitilde{}\ref{thermocouples}).
+
+\begin{figure}
+\centering
+\includegraphics[width=1\columnwidth]{thermocouples.pdf}
+\caption{Top: Data retrieved from thermocouple dataloggers deployed at three locations in two different burn units at the Dunn Ranch Prairie. Data include flame temperatures measured 15 cm above the soil surface, and soil heating at the soil surface. Bottom: After Dr.~Wonkka worked with a squad leader to understand how the thermocouple system had performed during the fire event (L), the squad leader then briefed the remainder of the crew (R). \label{thermocouples}}
+\end{figure}
+
+We used remotely-sensed data to illustrate the variability in burn severity across entire burn units (Fig.~\ref{severity}).
+While not possible to calculate severity from remotely-sensed data during the workshop due to the time necessary for post-burn imagery to be collected and come available, results of this analysis will be available for educational materials for future workshops.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\columnwidth]{severity_gg-1.pdf}
+\caption{A comparison of remotely-sensed data products (LANDSAT 8) from before and after two burns at the Dunn Ranch Prairie. Pre-burn imagery was captured 1 March 2022, and post-burn imagery was captured 26 March 2022; fires were conducted on 15 and 16 March 2022 (top and bottom, respectively). The difference in the Normalized Burn Ratio (dNBR) provides a measure of burn severity across each unit (right-most images). Areas with ``hotter'' colors--increasing from yellow and orange to red--burned with greater severity, i.e., more aboveground plant biomass was consumed. \label{severity}}
+\end{figure}
+
+\hypertarget{after-action-review}{%
+\section{After Action Review}\label{after-action-review}}
+
+To evaluate the success of the workshop in meeting the initial objectives and to identify opportunities to improve, we conducted two After Action Reviews (AAR).
+First, an anonymous online questionnaire was created and sent to participants, to which 8 of 10 responded.
+The questionnaire was designed to follow the P.L.O.W.S. format, which participants were introduced to during the course.
+PLOWS is a structured AAR format designed to focus on five key elements of an operation--Plan, Leadership, Obstacles, Weaknesses, Strengths--and avoid the erosion of interest in the AAR that can occur when participants state their broad, general opinion upon their initial opportunity to speak\footnote{More about PLOWS is available at this online document: \url{https://www.nwcg.gov/sites/default/files/wfldp/docs/plows-presentation.pdf}}.
+To more specifically accommodate the evaluation needs for the entire workshop rather than a single incident, we modifed PLOWS slightly to operate as PLOWSs, in which ``Strengths'' is expanded to include ``Strengths and Successes.''
+Once the results of the questionnaire were available, the cadre met in a virtual meeting to conduct their own AAR.
+
+Participants appear to have both enjoyed the workshop and gotten substantial value from it, with all respondents either agreeing or agreeing strongly that they would participate again and would recommend the workshop to others (Fig.~\ref{likert}).
+Likewise, the cadre felt that the major objectives were achieved and the workshop went smoothly.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\columnwidth]{likert_gg-1.pdf}
+\caption{Responses from Likert-style questions in the workshop evaluation. \label{likert}}
+\end{figure}
+
+\hypertarget{plan}{%
+\subsection{Plan}\label{plan}}
+
+Once the workshop began, daily plans were made by the cadre the night before and communicated to everyone through daily morning briefings (Fig.\textasciitilde{}\ref{briefing}).
+Participants generally responded favorably when asked how well plans were communicated (Fig.\textasciitilde{}\ref{likert}), although participant responses seemed to indicate that workshop objectives and the relationship of daily activities to those objectives might be better communicated.
+
+In optional short-answer responses, participants suggested that the objectives of the workshop could have been communicated better ahead of time.
+Others also suggested that the need for flexibility, especially in terms of adjusting daily plans around weather, be better communicated to participants ahead of arrival.
+Others suggested covering some of the pre-burn preparation work and planning in the workshop.
+
+The cadre was generally mildly surprised that the need for flexibility in a multi-day fire operation was apparently novel to some participants.
+In their AAR, the cadre was conflicted about how much of the logistical behind-the-scenes issues relating to even establishing, let alone communicating, plans for the workshop ought to be presented to participants.
+In reality, all manner of challenges faced the workshop planners, from broad, national scales over the course of many months, to fine local scales on a daily basis.
+The planning team had already pushed the entire event back a year due to COVID-19 restrictions.
+Whether TNC could commit to hosting the workshop and whether federally-employed members of the cadre could attend remained uncertain until just weeks before the scheduled start date.
+And finally, Dunn Ranch Prairie received substantial snowfall just a couple days prior to the workshop, and the condition of fuels and trails was uncertain.
+Fortunately, spring solar intensity and warm breezes melted the snow and dried the burn units while participants were undergoing the first day of training, but the cadre was reviewing their list of various non-live fire exercises, compiled in case just such a contingency was necessary.
+(These modules included fire behavior modeling exercises using Fireline Handbook Appendix B, Rothermel's nomograms \citep{rothermel1983}, and BehavePlus software \citep{heinsch2010}; and sandtable simulations of prescribed fire operations and leadership.)
+While there might perhaps be an educational element to keeping participants informed of persistent uncertainty, the cadre weighed the benefits of this insight for some participants against the risk of overwhelmingly confusing most of them.
+
+\emph{Other cadre reactions--Craig}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\columnwidth]{BriefingCircle.jpg}
+\caption{The cadre organized daily briefings to communicate the day's activities and objectives to workshop participants. \textbackslash label\{briefing\}}
+\end{figure}
+
+\hypertarget{leadership}{%
+\subsection{Leadership}\label{leadership}}
+
+Participants generally reported having a good understanding of the leadership structure for the workshop, and especially who their immediate supervisor was during activities (Fig.\textasciitilde{}\ref{likert}).
+Importantly, participants reported confidence that the cadre was interested in, and responsive to, participant needs.
+
+Several criticisms of the leadership clearly reflect the growing pains of a first attempt at a novel event.
+One participant specifically observed that confusion in the fire science portion on the first day was clarified in that day's AAR and was not a problem for the remainder of the course.
+Another suggested that more specific timeframes be given for fire science activities to ensure participants were able to keep on pace and not risk holding up the next phase of the operation.
+
+\emph{Cadre reactions--Craig}
+
+\hypertarget{obstacles}{%
+\subsection{Obstacles}\label{obstacles}}
+
+Very few participants noted frequent obstacles during the workshop--six of the eight respondents indicated no obstacles applied to them personally, and five of eight respondents indicated not observing obstacles applying to other participants.
+However, several obstacles were reported by at least one participant (Fig.~\ref{obstacles}).
+In comments, participants sought better communication about PPE needs ahead of the workshop for those unfamiliar with prescribed fire kit.
+Another comment expressed concern that some participants were fatigued and communication was not clear.
+No comments indicated what personnel issues among the cadre were perceived, and the cadre was unable to identify points of potential concern, although one Weakness response mentioned the ``burn boss was not always calm and collected {[}which{]} made some crew members anxious.''
+Obstacles experienced by participants appeared to relate more to the workshop itself than inherent concerns about COVID-19.
+
+Generally speaking, the cadre was surprised participants did not identify more obstacles, especially weather.
+After residual moisture from snow at Dunn Ranch Prairie passed as the initial concern, high winds replaced it.
+Predicted gusts exceeded standard TNC prescriptions, although the cadre was able to mitigate wind conditions by delaying ignition on one unit until winds subsided and burning the unit with the lightest fuels on the day with the highest forecast winds.
+That these factors were considerations was communicated during briefings, but participants either did not recognize them as obstacles or understood the questionnaire to relate more to their personal experiences than to the obstacles facing the cadre and workshop as a whole.
+
+\emph{Cadre reactions--Craig}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\columnwidth]{obstacles_gg-1.pdf}
+\caption{Obstacles experienced by workshop participants, or perceived by participants to have affected others. \label{obstacles}}
+\end{figure}
+
+\hypertarget{weaknesses}{%
+\subsection{Weaknesses}\label{weaknesses}}
+
+Participants were asked to identify weaknesses for four separate prompts: specific weaknesses in the workshop relating to fire science activities (5 responses), prescribed fire operations (1 response), and workshop logistics (5 responses), and a general prompt for other weaknesses (1 response).
+Overall, the most frequently-mentioned weakness (3 responses) was the lack of opportunity to process and analyze data after they were collected.
+The fire science instructors were aware of this as a known limitation of the format, and have identified a blended learning opportunity \emph{following} the workshop, as well as preceding it, as a means to (The cadre believe that the necessary laboratory work to process clippings, download thermocouple data, and assess quality of all data preclude a during-workshop module, although now that one as occurred, opportunities to work with previous years' data exist, e.g.~Fig.~\ref{severity}).
+Other respondents just generally wanted more time to work with the scientific instruments, especially alongside instructors, to better understand the elements of the workshop that were, as expected, less familiar to participants.
+
+\emph{Cadre reactions--Craig}
+
+\hypertarget{strengths-and-successes}{%
+\subsection{Strengths and successes}\label{strengths-and-successes}}
+
+Participants were asked to identify strenths and sucesses in the workshop, following the same categories as above.
+In terms of fire science, respondents appreciated the quality of the materials and instruction, experience of the instructors, and opportunities to use sampling tools and measurement devices hands-on.
+Two respondents specifically highlighted the time instructors made available for questions and the value of subsequent discussions.
+In terms of the prescribed fire operations, several respondents acknowledged the success of the burns, which they attributed to experience on-hand; strong, ``decisive'' leadership and ``excellent'' line bosses; and good weather (listed in order of frequency mentioned).
+Two respondents specifically mentioned crew cohesion.
+In terms of workshop logistics, respondents acknowledged the quality of the facilities and their proximity to the burn units, and the availability and quality of food.
+
+The cadre identified several strengths and successes.
+Firstly, no personnel were injured and no equipment or property damaged.
+All deployed fire behavior instruments performed as intended and no scientific materials were lost through their use in the workshop.
+Secondly, a number of trainees among the participants were able to achieve hands-on experience that qualified as entries for prescribed fire operations in open position task books (Fig.~\ref{sizeup}).
+
+\emph{Cadre reactions--Craig}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\columnwidth]{sizeup2.JPG}
+\caption{A Type 5 Incident Commander (ICT5) trainee who participated in the workshop practices an incident size up on a spot fire that the workshop cadre allowed to slop over across a narrow walking path between two patches of tallgrass fuels used in the first training exercise. \label{sizeup}}
+\end{figure}
+
+\hypertarget{conclusions-and-recommendations}{%
+\section{Conclusions and recommendations}\label{conclusions-and-recommendations}}
+
+Given the constraints and uncertainties leading up to this workshop, especially as all stakeholders and participants navigated the initial phases of (what we hope turns out to be) the COVID-19 pandemic endgame, we conclude that the Hands-on Prescribed Fire Methods Workshop was a resounding success.
+Most broadly, the workshop provides an important opportunity to learn and burn alongside peers under the supervision of qualified, experienced burners from several agencies, which fills an important training and experience gap among early career wildland fire professionals \citep{kobziar2009}.
+
+More specifically, we believe our workshop provides a unique opportunity for participants to gain experience with fire science.
+While perhaps not at the top of every wildland fire professional's priority skill set, understanding how prescribed fires are conducted and how data are collected are essential components of
+
+\emph{Cadre reactions--EVERYONE!}
+
+We believe the educational component could be better developed through instructor-moderated coursework ahead of the workshop, as well as post-workshop modules to work through the data collected.
+Based on our own experience and feedback from the AAR, there is ample opportunity to broader incorporate blended learning into several components of this or other workshops.
+One course participant expressed an interest in an opportunity for workshop participants to deliver presentations on their own professional experience, which would likely be better suited to pre-workshop meetings and would also contribute to participants getting to know each other more prior to arrival on-site.
+
+In the wildland fire community, blended learning is a double-edged sword.
+On one hand, more individuals have the opportunity to meet training requirements and participate on fire crews, which can help mitigate staffing shortages.
+On the other hand, quickly working through certification coursework online without sufficient in-person experience can contribute to lopsided professional development (Fig.~\ref{FireTrainingTriangles}) and crews that are perhaps only on paper ready for an incident.
+
+There are two particular advantages to blended learning that workshops such as ours can leverage \citep{cantrell2014}.
+Firstly, doing online coursework prior to the workshop can smooth out imbalances in knowledge and experience among participants.
+Self-paced material allows those familiar with certain concepts or tasks to move through more quickly while those less familiar with the material can slow down and explore deeper. Secondly, having reviewed material beforehand puts participants in a position to engage instructors at a higher level when interacting face-to-face--with the basic delivery of information largely complete, interactions can more readily focus on synthesis and application.
+For our workshop, it likely that students will both gain more education out of blended learning modules as well as enjoy better crew cohesion and get more value from their training and hands-on experience.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{6pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% optional
+
+\acknowledgments{All sources of funding of the study should be disclosed. Please clearly indicate grants that you have received in support of your research work. Clearly state if you received funds for covering the costs to publish in open access.}
+
+\authorcontributions{For research articles with several authors, a short paragraph specifying their individual contributions must be provided. The following statements should be used ``X.X. and Y.Y. conceived and designed the experiments; X.X. performed the experiments; X.X. and Y.Y. analyzed the data; W.W. contributed reagents/materials/analysis tools; Y.Y. wrote the paper.'\,' Authorship must be limited to those who have contributed substantially to the work reported.}
+
+\conflictsofinterest{The authors declare no conflict of interest.}
+
+\appendixtitles{no} 
+\appendixstart
+\appendix
+% \section{Additional information}
+
+\begin{specialtable}[H] 
+\caption{Courses in wildland fire behavior and fire ecology available through the National Wildfire Coordinating Group (NWCG) current training curriculum.
+\emph{Hours} column includes hours of instruction, both instructor-led and/or self-directed, as appropriate. 
+$^\dagger$ Note that both Rx-310 and S-490 are followed by specialized intensive 500-level courses that are required to complete their respective qualification series.}
+\label{tab:training}
+\begin{tabular}{p{3cm}p{1.25cm}p{4.25cm}p{3cm}}
+\toprule
+\textbf{Course} & \textbf{Hours} & \textbf{Content/objectives} & \textbf{Target audience} \\ \midrule
+
+\href{https://www.nwcg.gov/publications/training-courses/s-190}{S-190, Intro. Wildland Fire Behavior} & 7/6-8 & Fuels, weather, topography; Recognize critical fire weather, alignment, and danger risk & All qualified crewmembers \\
+\href{https://www.nwcg.gov/publications/training-courses/s-290}{S-290, Intermediate Wildland Fire Behavior} & 37/15 & Tactical implications of interactions between fuels, weather, topography; Causes of extreme fire behavior & All supervisory positions \\
+\href{https://www.nwcg.gov/publications/training-courses/rx-310}{Rx-310, Introduction To Fire Effects}$^\dagger$ & 32-36/0 & Understand fire as ecological process; fire regime; first-order fire effects; interactions between fire management and natural resources & Rx fire leadership, Resource Advisors \\
+\href{https://www.nwcg.gov/publications/training-courses/s-390}{S-390, Intro Wildland Fire Behavior Calculations} & 42-44/0 & Use and interpret fire behavior prediction models & Incident commanders, Burn bosses \\
+\href{https://www.nwcg.gov/publications/training-courses/s-490}{S-490, Advanced Fire Behavior Calculations}$^\dagger$ & 44-47/0 & Use advanced techniques to predict fire behavior, project fire growth & Fire and Fire Behavior Analysts, Burn bosses \\
+\bottomrule
+\end{tabular}
+\end{specialtable}
+
+
+\end{paracol}
+\reftitle{References}
+\externalbibliography{yes}
+\bibliography{FireScienceWorkshop.bib}
+
+
+\end{document}
