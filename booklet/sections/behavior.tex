@@ -135,7 +135,7 @@ In other cases, the junction is simply a bare \emph{bead} in which a small weld,
 	%(Fig.~\ref{fig:ProbeVsWire})
 \end{figure} 
 
-Surprisingly, it does not appear that the relative merits of probes vs. beads for wildland fire science have been reported on, although the probe seems to introduce some confusion into what is actually being measured.\footnote{
+Surprisingly, it does not appear that the relative merits of probes vs. beads for wildland fire science have been reported on, although the probe seems to introduce some confusion into what is actually being measured.\footnote[][-2cm]{
 	For example, \citet{coates2018} observed different temperatures from 28 cm probes laying horizontally along the soil surface to those standing vertically, which they attributed to the different ``orientation'' of the probes.
 	But since the hot junction is at the end of probe, they've really just compared two points at different heights above the ground. 
 	That temperature in the wildland fire environment changes with distance above the soil surface has been known for decades \citep[e.g.,][]{trollope1984}. }
@@ -419,3 +419,87 @@ Beginning temperatures and rate of heating are useful parameters in soil heating
 	\label{fig:HeatingCurve} 
 	%(Fig.~\ref{fig:HeatingCurve})
 \end{figure}
+
+\section{Soil heating}
+
+Fire effects on soils has received considerable attention from both researchers and managers, and it is not difficult for wildland fire scientists to collect useful data on soil heating during prescribed burns. 
+Fire influences the soil either directly, by combustion of organic matter, or indirectly, by exposing soil constituents to heat. 
+Soil heating is of interest because it can alter the abundance and chemical composition of nutrients, cause mortality and alter community composition of soil microbes, and when heat doses are particularly high, alter water infiltration and the physical structure of soil particles \footnote{See \citet{pereira2019} and Chapter 6 in \citet{mcgranahan2021}.}.  
+In grasslands, specifically, some of the main effects of soil heating include belowground bud dynamics, plant-available nitrogen, and soil microbes \citep[Fig.~\ref{fig:SoilEffects};][]{brady2022, mcgranahan2022}. 
+
+\begin{figure} 
+	\begin{center}
+		\includegraphics[width=1\textwidth]
+			{science/behavior/ChangeN-1}
+		\includegraphics[width=1\textwidth]
+			{science/behavior/TotMicDiff-1}
+	\end{center}
+	\caption{Effects of soil heating from \citet{mcgranahan2022}. 
+	} \label{fig:SoilEffects}
+	%(Fig.~\ref{fig:SoilEffects})
+\end{figure} 
+
+In general, soil itself is a poor conductor of energy. 
+Only under extreme conditions in the aboveground fire environment, or in the soil itself, will heating have substantial severity on soil properties below the surface. 
+Aboveground, large coarse woody debris that remains smoldering on the soil surface can cause heat to move deeper into the soil via conduction. 
+Otherwise, flame fronts moving through fine fuels generally do not have long enough residence times to expose soil to substantial heating.
+Within the soil, texture and especially moisture content regulate heat transfer.
+Generally speaking, higher soil moisture slows heating, as the high specific heat capacity of water makes it resistant to temperature change without substantial heat input. 
+
+Two general approaches to obtaining information on soil heating include \emph{direct measurement} and \emph{modeling}: 
+
+\begin{marginfigure}
+	\begin{center}
+		\includegraphics[width=2.2in]
+		{science/behavior/mod_results-1}
+		\caption{An example of soil heating model results published by \citet{mcgranahan2022} showing the temperature of different fires 10 min after exposure at centimeter depth increments.
+		The model combines soil surface temperature curve data exactly like those derived in Fig.~\ref{fig:HeatingCurve} with information on soil moisture \& texture and physics-based parameters of fluid dynamics. 
+		The initial model was developed by \citet{campbell1994} and applied to estimating heat exposure to prairie grass buds by \citet{choczynska2009}. 
+			\label{fig:SoilModResults} } 
+		% (Fig.~\ref{fig:SoilModResults})
+	\end{center}
+\end{marginfigure}
+
+\begin{itemize}[noitemsep]
+	\item \textbf{Direct measurement\textemdash}Temperature sensors are placed at specific depths of the soil profile.
+	\begin{itemize}[noitemsep]	
+		\item \textit{Advantages:} Best way to get data at a specific point is to measure it directly. 
+		Because even high levels of soil heating are not nearly as extreme as the heat of open combustion, less heat-resistant sensors are required. 
+		\item \textit{Disadvantages:} Information is limited to the specific levels at which sensors have been placed. 
+		Placing sensors in the soil, especially many of them, is time-consuming and difficult to do well without substantially disrupting the soil environment. 
+	\end{itemize}
+	\item \textbf{Modeling\textemdash}Use a combination of data from various sources to inform a mathematical model that predicts heat exposure at one or more depths (Fig.~\ref{fig:SoilModResults}).  
+	\begin{itemize}[noitemsep]	
+		\item \textit{Advantages:} Much easier to estimate heating at various depths without much effort in the field or disruption to soil structure. 
+		\item \textit{Disadvantages:} As with all models, the results are only as good as the data that inform them and the assumptions of the mathematical relationships. 
+	\end{itemize}
+\end{itemize}
+
+\begin{marginfigure}
+	\begin{center}
+		\includegraphics[height=3in]
+		{science/behavior/iStake}
+		\caption{The iStake, for inserting iButton temperature sensors at fixed soil depths \citep{brady2022}. 
+			The SheFire model can interpolate these temperatures to provide smooth heating curves (Fig.~\ref{fig:SheFireResults}). 
+			\label{fig:iStake} } 
+		% (Fig.~\ref{fig:iStake})
+	\end{center}
+\end{marginfigure}
+
+Methods that combine measurement and modeling have also been established.  
+For example, the SheFire system uses a computer program to interpolate a continuous heating curve from temperature sensors placed at fixed intervals into the soil, using a wooden stake to ensure proper depth, spacing, and minimal soil disturbance and incidental heat transfer (Fig.~\ref{fig:SheFireResults}). 
+
+\begin{figure} 
+	\begin{center}
+		\includegraphics[width=1\textwidth]
+		{science/behavior/SheFireResults}
+	\end{center}
+	\caption{Interpolated soil heating curves from the SheFire model \citep{brady2022}. 
+	On the left, actual values from the three iButtons at their fixed positions; on the right, heating curves for 10 depth increments, for high and low fuel load scenarios (top and bottom, respectively). 
+	} \label{fig:SheFireResults}
+	%(Fig.~\ref{fig:SheFireResults})
+\end{figure} 
+
+
+
+
